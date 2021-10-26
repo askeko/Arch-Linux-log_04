@@ -45,7 +45,7 @@ To check the service status, use: `timedatectl status`.
 Use `lsblk` and `lsblk -f` to identify your drives.
 1. (opt) WARNING! The following command completely erases all data on the drive specified (replace X with your drive): `sgdisk --zap-all /dev/sdX`.
 2. List drives with `lsblk` and identify which one to use for the Linux partition, then setup partitions for Linux: `cgdisk /dev/sdX`.
-3. Create the first partition (boot) as EFI. Default first sector, size: `500M`, type: `ef00`, called `boot`.
+3. Create the first partition (boot) as EFI. Default first sector, size: `1G`, type: `ef00`, called `boot`.
 4. Create the second partition (Linux file system). Default first sector, size: remaining space, type `8300`, called `arch` (Or any other name you deem appropriate).
 5. Write and quit.
 6. Verify partitions with `lsblk`.

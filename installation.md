@@ -64,7 +64,7 @@ Now we can format and mount the partitions:
 3. Tell the system to remount the partitions in the correct positions: `genfstab -U /mnt > /mnt/etc/fstab`.
 4. (opt) check if fstab was generated correctly: `cat /mnt/etc/fstab`.
 5. Enter chroot: `arch-chroot /mnt`.
-
+6. Install text editor: `pacman -S nvim`
 ### Localization
 1. List zoneinfo: `ln -sf /usr/share/zoneinfo/`.
 2. Pick timezone: `ln -sf /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime`.

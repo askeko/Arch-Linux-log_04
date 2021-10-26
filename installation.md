@@ -52,3 +52,7 @@ Now we can format and mount the partitions:
 4. Create boot directory inside the first mount point: `mkdir /mnt/boot`.
 5. Mount the `boot` EFI partition: `mount /dev/sdX# /mnt/boot`.
 6. Verify with `lsblk`.
+
+### Installing the base system
+Now we'll set up the mirrorlist, install the base packages and finally chroot into the installed system:
+1. 

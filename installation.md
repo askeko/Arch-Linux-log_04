@@ -114,7 +114,7 @@ pacman -S intel-ucode     # For Intel processors only
 2. Install grub: `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 ###### NOTE
 > OS-prober and GRUB might need additional configuration here. In a new update os-prober seems to be disabled by default by GRUB. Also when working with multiple kernels, it might be easier to disable the submenu. This can be fixed by appending the following lines to `/etc/default/grub`:
-> sd
+> 
 > `GRUB_DISABLE_SUBMENU=y`.         # This should be at the top of the file.
 > `GRUB_DISABLE_OS_PROBER=false`.   # This should be at the bottom of the file.
 > 

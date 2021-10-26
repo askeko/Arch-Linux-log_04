@@ -115,8 +115,8 @@ pacman -S intel-ucode     # For Intel processors only
 ###### NOTE
 > OS-prober and GRUB might need additional configuration here. In a new update os-prober seems to be disabled by default by GRUB. Also when working with multiple kernels, it might be easier to disable the submenu. This can be fixed by appending the following lines to `/etc/default/grub`:
 > 
-> `GRUB_DISABLE_SUBMENU=y`.         # This should be at the top of the file.
-> `GRUB_DISABLE_OS_PROBER=false`.   # This should be at the bottom of the file.
+> `GRUB_DISABLE_SUBMENU=y`.         # This should be at the top of the file.  
+> `GRUB_DISABLE_OS_PROBER=false`.   # This should be at the bottom of the file.  
 > 
 > Remember to (re)generate the GRUB config file in step 3.
 >

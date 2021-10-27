@@ -27,3 +27,9 @@ Sudo into nvidia-settings and check both `Force Composition Pipeline` and `Force
 sudo nvidia-settings
 ```
 Save to `/etc/X11/xorg.conf`.
+
+#### Nvidia mouse/UI fix
+The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird way. I've done a few things to fix this:
+1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`
+2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`
+3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`

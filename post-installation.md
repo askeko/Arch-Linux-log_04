@@ -38,10 +38,12 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 The following will be setup to work together, some config files may refer to other programs, e.g. Polybar autostart in i3 config.
 
 ### Polybar
-WIP - ~/.config/polybar/config
+WIP - `~/.config/polybar/config`
+
+Made a script for startup in `~/.local/bin/polybar/launch.sh`
 
 ### Alacritty
-WIP ~/.config/
+WIP `~/.config/`
 
 ### i3-gaps
-WIP - ~/.config/i3/config
+WIP - `~/.config/i3/config

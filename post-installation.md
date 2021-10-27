@@ -33,3 +33,15 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`
 2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`
 3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`
+
+## Ricing
+The following will be setup to work together, some config files may refer to other programs, e.g. Polybar autostart in i3 config.
+
+### Polybar
+WIP - ~/.config/polybar/config
+
+### Alacritty
+WIP ~/.config/
+
+### i3-gaps
+WIP - ~/.config/i3/config

@@ -52,8 +52,9 @@ Had some trouble configuring this properly - if the above doesn't work try troub
 Things that needs to be added to AARBS or absrice - remove entries when they are added.
 
 ### AARBS
+progs.csv
 ```
-
+,jq,"for script (ipfinder.sh) dependency"
 ```
 
 ### absrice
@@ -63,6 +64,7 @@ Things that needs to be added to AARBS or absrice - remove entries when they are
 ~/.config/i3/
 ~/.config/x11/xprofile
 ~/.config/x11/xresources
+~/.local/bin/statusbar/
 ```
 
 ## Ricing

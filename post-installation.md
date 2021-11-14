@@ -64,6 +64,7 @@ Things that needs to be added to AARBS or absrice - remove entries when they are
 ~/.config/i3/
 ~/.config/x11/xprofile
 ~/.config/x11/xresources
+~/.local/share/fonts/
 ```
 
 ## Ricing

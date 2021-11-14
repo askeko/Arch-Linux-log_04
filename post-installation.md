@@ -53,9 +53,8 @@ Had some trouble configuring this properly - if the above doesn't work try troub
 Things that needs to be added to AARBS or absrice - remove entries when they are added.
 
 ### AARBS
-progs.csv
 ```
-,jq,"for script (ipfinder.sh) dependency"
+
 ```
 
 ### absrice
@@ -65,7 +64,6 @@ progs.csv
 ~/.config/i3/
 ~/.config/x11/xprofile
 ~/.config/x11/xresources
-~/.local/bin/statusbar/
 ```
 
 ## Ricing
@@ -73,7 +71,6 @@ The following will be setup to work together, some config files may refer to oth
 
 ### Polybar
 WIP - `~/.config/polybar/*`
-
 
 ### Alacritty
 WIP `~/.config/alacritty/*`

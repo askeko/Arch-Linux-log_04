@@ -34,7 +34,7 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`
 3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`
 
-### VPN (PIA)
+### VPN (Mullvad)
 1. Install openvpn `pacman -S openvpn`
 2. Download the openvpn configuration file from [PIA](https://www.privateinternetaccess.com/openvpn/openvpn-strong.zip).
 3. Extract the contents of the .zip file `unzip openvpn.zip -d openvpn`.
@@ -45,7 +45,7 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 8. (Maybe optional) might have to restart i3 (shift+mod+r).
 9. Start the service `systemctl start openvpn-client@openvpn_dk`.
 10. If everything works, enable on boot `systemctl enable openvpn-client@openvpn_dk`.
-11. I use [this script](https://github.com/muntjaber/polybar-ipfinder) with polybar.
+11. I use [this script](https://github.com/shervinsahba/polybar-vpn-controller) with polybar.
 
 Had some trouble configuring this properly - if the above doesn't work try troubleshooting ownership (chown) of files. I've used the [OpenVPN command line approach](https://wiki.archlinux.org/title/Private_Internet_Access)
 

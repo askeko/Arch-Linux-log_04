@@ -46,6 +46,23 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 
 Had some trouble configuring this properly - if the above doesn't work try troubleshooting ownership (chown) of files. I've used the [OpenVPN command line approach](https://wiki.archlinux.org/title/Private_Internet_Access)
 
+## Add to AARBS/absrice
+Things that needs to be added to AARBS or absrice - remove entries when they are added.
+
+### AARBS
+```
+
+```
+
+### absrice
+```
+~/.config/polybar/
+~/.config/alactritty/
+~/.config/i3/
+~/.config/x11/xprofile
+~/.config/x11/xresources
+```
+
 ## Ricing
 The following will be setup to work together, some config files may refer to other programs, e.g. Polybar autostart in i3 config.
 

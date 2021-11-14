@@ -39,7 +39,7 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 2. Install Mullvad `yay -S mullvad-vpn`.
 3. Start the service `systemctl start mullvad-daemon.service`.
 4. Enable the service on boot `systemctl enable mullvad-daemon.service`.
-5. Open the program `mullvad-vpn` and set it to auto-connect.
+5. Open the program `mullvad-vpn` and set it to launch app on start-up and auto-connect.
 6. I use [this script](https://github.com/shervinsahba/polybar-vpn-controller) with polybar.
 
 Had some trouble configuring this properly - if the above doesn't work try troubleshooting ownership (chown) of files. I've used the [OpenVPN command line approach](https://wiki.archlinux.org/title/Private_Internet_Access)

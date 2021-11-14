@@ -45,6 +45,7 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 8. (Maybe optional) might have to restart i3 (shift+mod+r).
 9. Start the service `systemctl start openvpn-client@openvpn_dk`.
 10. If everything works, enable on boot `systemctl enable openvpn-client@openvpn_dk`.
+11. I use [this script](https://github.com/muntjaber/polybar-ipfinder) with polybar.
 
 Had some trouble configuring this properly - if the above doesn't work try troubleshooting ownership (chown) of files. I've used the [OpenVPN command line approach](https://wiki.archlinux.org/title/Private_Internet_Access)
 

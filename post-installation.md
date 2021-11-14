@@ -30,22 +30,17 @@ Save to `/etc/X11/xorg.conf`.
 
 #### Nvidia mouse/UI fix
 The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird way. I've done a few things to fix this:
-1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`
-2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`
-3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`
+1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`.
+2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`.
+3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`.
 
 ### VPN (Mullvad)
-1. Install openvpn `pacman -S openvpn`
-2. Download the openvpn configuration file from [PIA](https://www.privateinternetaccess.com/openvpn/openvpn-strong.zip).
-3. Extract the contents of the .zip file `unzip openvpn.zip -d openvpn`.
-4. Copy the desired vpn server `sudo cp ~/Downloads/openvpn/'denmark.ovpn' /etc/openvpn/client/openvpn_dk.conf`.
-5. Create a file at `/etc/openvpn/client/` called `auth.txt` and input PIA username on the first line and the password on the second line.
-6. Change the file permission so only root can access it `sudo chmod 400 auth.txt`.
-7. (Maybe optional) change ownership `sudo chown openvpn:openvpn /etc/openvpn -R`.
-8. (Maybe optional) might have to restart i3 (shift+mod+r).
-9. Start the service `systemctl start openvpn-client@openvpn_dk`.
-10. If everything works, enable on boot `systemctl enable openvpn-client@openvpn_dk`.
-11. I use [this script](https://github.com/shervinsahba/polybar-vpn-controller) with polybar.
+1. (OPT) install optional dependencies `pacman -S rofi geoip geoip-database-extra`.
+2. Install Mullvad `yay -S mullvad-vpn`.
+3. Start the service `systemctl start mullvad-daemon.service`.
+4. Enable the service on boot `systemctl enable mullvad-daemon.service`.
+5. Open the program `mullvad-vpn` and set it to auto-connect.
+6. I use [this script](https://github.com/shervinsahba/polybar-vpn-controller) with polybar.
 
 Had some trouble configuring this properly - if the above doesn't work try troubleshooting ownership (chown) of files. I've used the [OpenVPN command line approach](https://wiki.archlinux.org/title/Private_Internet_Access)
 

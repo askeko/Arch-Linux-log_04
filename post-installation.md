@@ -35,9 +35,16 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`
 
 ### VPN (PIA)
-1. Download the installer from the [PIA website](https://www.privateinternetaccess.com/download/linux-vpn)
-2. Make the file executable `chmod +x [filename].run`
-3. Execute it `./file.run`
+1. Install openvpn `pacman -S openvpn`
+2. Download the openvpn configuration file from [PIA](https://www.privateinternetaccess.com/openvpn/openvpn-strong.zip).
+3. Extract the contents of the .zip file `unzip openvpn.zip -d openvpn`.
+4. Copy the desired vpn server `sudo cp ~/Downloads/openvpn/'denmark.ovpn' /etc/openvpn/client/openvpn_dk.conf`.
+5. Create a file at `/etc/openvpn/client/` called `auth.txt` and input PIA username on the first line and the password on the second line.
+6. Change the file permission so only root can access it `sudo chmod 400 auth.txt`.
+7. Start the service `systemctl start openvpn-client@openvpn_dk`.
+8. If everything works, enable on boot `systemctl enable openvpn-client@openvpn_dk`.
+
+Had some trouble configuring this properly - if the above doesn't work try troubleshooting ownership (chown) of files. I've used the [OpenVPN command line approach](https://wiki.archlinux.org/title/Private_Internet_Access)
 
 ## Ricing
 The following will be setup to work together, some config files may refer to other programs, e.g. Polybar autostart in i3 config.

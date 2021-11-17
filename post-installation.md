@@ -33,6 +33,7 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`.
 2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`.
 3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`.
+4. Maybe adding `xrandr --dpi 96` to 
 
 ### VPN (Mullvad)
 1. (OPT) install optional dependencies for the polybar script `pacman -S rofi geoip geoip-database-extra`.

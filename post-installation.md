@@ -35,6 +35,9 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`.
 4. Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xresources` is enough?
 
+### Managing dotfiles
+https://www.atlassian.com/git/tutorials/dotfiles
+
 ### VPN (Mullvad)
 1. (OPT) install optional dependencies for the polybar script `pacman -S rofi geoip geoip-database-extra`.
 2. Install Mullvad `yay -S mullvad-vpn`.

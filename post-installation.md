@@ -49,8 +49,7 @@ Things that needs to be added to AARBS or absrice - remove entries when they are
 
 ### AARBS
 ```
-+rofi
--dmenu
+
 ```
 
 ### absrice
@@ -62,6 +61,7 @@ Things that needs to be added to AARBS or absrice - remove entries when they are
 ~/.config/x11/xresources
 ~/.local/share/fonts/
 ~/.config/rofi/
+~/.config/shell/profile
 ```
 
 ## Ricing

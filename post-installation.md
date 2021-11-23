@@ -47,7 +47,3 @@ https://www.atlassian.com/git/tutorials/dotfiles
 6. I use [this script](https://github.com/shervinsahba/polybar-vpn-controller) with polybar.
 
 Had some trouble configuring this properly - if the above doesn't work try troubleshooting ownership (chown) of files. I've used the [OpenVPN command line approach](https://wiki.archlinux.org/title/Private_Internet_Access)
-
-### [Prompt](https://github.com/romkatv/powerlevel10k)
-1. `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k`
-2. In .zshrc: `source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme`

@@ -40,6 +40,7 @@ Install PIA from the AUR `yay -S piavpn-bin`
 
 ### Razer lighting support
 `yay -S openrazer-meta razergenie`
+Devices does not show atm.
 
 ### Managing dotfiles
 https://www.atlassian.com/git/tutorials/dotfiles

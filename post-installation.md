@@ -39,7 +39,7 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 Install PIA from the AUR `yay -S piavpn-bin`
 
 ### Razer lighting support
-`yay -S openrazer-meta
+`yay -S openrazer-meta`
 
 ### Managing dotfiles
 https://www.atlassian.com/git/tutorials/dotfiles

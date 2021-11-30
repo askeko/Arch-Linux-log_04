@@ -45,5 +45,8 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 `yay -S openrazer-meta razergenie`
 Devices does not show atm.
 
+### TeX typesetting system
+`pacman -S texlive-most`
+
 ### Managing dotfiles
 https://www.atlassian.com/git/tutorials/dotfiles

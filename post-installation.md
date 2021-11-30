@@ -36,7 +36,10 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 4. Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xresources` is enough?
 
 ### VPN (PIA)
-Install PIA from the AUR `yay -S piavpn-bin`
+`yay -S piavpn-bin`
+
+### Bitwarden
+`pacman -S bitwarden`
 
 ### Razer lighting support
 `yay -S openrazer-meta razergenie`

@@ -60,7 +60,7 @@ Now we can format and mount the partitions:
 
 ### Installing the base system
 1. Rearrange mirrorlist by moving mirrors close to your location to the top: `vim /etc/pacman.d/mirrorlist`.
-2. Use pacstrap to install the basic system packages, as well as an optional secondary (more stable) kernel in case the bleeding edge kernel has issues: `pacstrap /mnt base base-devel linux linux-lts linux-firmware nvim`.
+2. Use pacstrap to install the basic system packages, as well as an optional secondary (more stable) kernel in case the bleeding edge kernel has issues: `pacstrap /mnt base base-devel linux linux-lts linux-firmware`.
 3. Tell the system to remount the partitions in the correct positions: `genfstab -U /mnt > /mnt/etc/fstab`.
 4. (opt) check if fstab was generated correctly: `cat /mnt/etc/fstab`.
 5. Enter chroot: `arch-chroot /mnt`.

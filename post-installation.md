@@ -36,7 +36,9 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 4. Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xprofile` is enough?
 
 ### VPN (PIA)
-`yay -S piavpn-bin`
+1. Install from AUR: `yay -S piavpn-bin`.
+2. Start daemon `sudo systemctl start piavpn.service`
+3. Enable on startup `sudo systemctl enable piavpn.service`
 
 ### Bitwarden
 `pacman -S bitwarden`

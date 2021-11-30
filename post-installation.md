@@ -48,5 +48,8 @@ Devices does not show atm.
 ### TeX typesetting system
 `pacman -S texlive-most`
 
+### Discord
+`yay -S discord_arch_electron`
+
 ### Managing dotfiles
 https://www.atlassian.com/git/tutorials/dotfiles

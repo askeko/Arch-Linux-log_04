@@ -52,3 +52,9 @@ Devices does not show atm.
 
 ### Managing dotfiles
 https://www.atlassian.com/git/tutorials/dotfiles
+
+## Fixing system freeze (AMD specific)
+Things to try:
+
+1. Run another browser than Firefox
+2. https://gist.github.com/wmealing/2dd2b543c4d3cff6cab7 AND https://bbs.archlinux.org/viewtopic.php?id=265239

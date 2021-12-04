@@ -64,3 +64,5 @@ Things to try:
 ### Steam
 
 ### Calcurse with Google Calendar
+
+### Email (Neomutt?)

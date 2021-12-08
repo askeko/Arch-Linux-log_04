@@ -43,10 +43,6 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 ### Bitwarden
 `pacman -S bitwarden`
 
-### Razer lighting support
-`yay -S openrazer-meta razergenie`
-Devices does not show atm.
-
 ### Discord
 `yay -S discord_arch_electron`
 

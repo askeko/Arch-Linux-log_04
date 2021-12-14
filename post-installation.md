@@ -2,11 +2,8 @@
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/absentia-gh/artix-linux-log/blob/main/installation.md).
-1. Install git: `pacman -S git`.
-2. Clone the repo: `git clone https://github.com/absentia-gh/AARBS`.
-3. Copy the script: `cp ~/AARBS/aarbs.sh ~/aarbs.sh`.
-4. Clean up: `rm -rf AARBS`.
-5. Run the script: `sh aarbs.sh`.
+1. curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh
+2. sh aarbs.sh
 
 ### If startx
 The keyboard layout will by default be set to US (you can check options with `setxkbmap -print -verbose 10`), to change this use the following command: `setxkbmap -model pc105 -layout dk`.

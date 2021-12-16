@@ -60,7 +60,8 @@ Things to try:
 1. Enable multilib repo in `/etc/pacman.conf/`, remember to uncomment both lines.
 2. Run `sudo pacman -Syy`
 3. Install steam `sudo pacman -S steam` with the appropriate vulkan driver.
-4. 
+4. Make a directory for Microsoft fonts `mkdir /usr/share/fonts/WindowsFonts`
+5. 
 
 ### Calcurse with Google Calendar
 

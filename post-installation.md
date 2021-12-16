@@ -41,7 +41,8 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 `pacman -S bitwarden`
 
 ### Discord
-`yay -S discord_arch_electron`
+* `yay -S discord_arch_electron`
+OR * `pacman -S discord` for non-electron. 
 
 ### Managing dotfiles
 https://www.atlassian.com/git/tutorials/dotfiles

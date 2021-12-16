@@ -60,8 +60,12 @@ Things to try:
 1. Enable multilib repo in `/etc/pacman.conf/`, remember to uncomment both lines.
 2. Run `sudo pacman -Syy`
 3. Install steam `sudo pacman -S steam` with the appropriate vulkan driver.
-4. Make a directory for Microsoft fonts `mkdir /usr/share/fonts/WindowsFonts`
-5. 
+4. enable en_US locale `sudo nvim /etc/locale.gen`
+5. run `sudo locale-gen`
+6. Make a directory for Microsoft fonts `mkdir /usr/share/fonts/WindowsFonts`
+7. Copy the fonts from a Windows partition mounted @/mnt `sudo cp /mnt/Windows/Fonts/* /usr/share/fonts/WindowsFonts/`
+8. `sudo chmod 644 /usr/share/fonts/WindowsFonts/*`
+9. Regen fontconfig cache `fc-cache --force`
 
 ### Calcurse with Google Calendar
 

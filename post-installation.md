@@ -57,6 +57,10 @@ Things to try:
 ### Mopidy with Spotify
 
 ### Steam
+1. Enable multilib repo in `/etc/pacman.conf/`, remember to uncomment both lines.
+2. Run `sudo pacman -Syy`
+3. Install steam `sudo pacman -S steam` with the appropriate vulkan driver.
+4. 
 
 ### Calcurse with Google Calendar
 

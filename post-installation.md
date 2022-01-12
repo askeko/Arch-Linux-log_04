@@ -53,8 +53,6 @@ Things to try:
 1. Run another browser than Firefox (Not tested)
 2. https://gist.github.com/wmealing/2dd2b543c4d3cff6cab7 AND https://bbs.archlinux.org/viewtopic.php?id=265239 (CURRENT: Disabled C-states in BIOS) >>> FIXED <<<
 
-### Mouse theme
-
 ### Mopidy with Spotify
 
 ### Steam

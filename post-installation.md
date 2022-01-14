@@ -53,6 +53,24 @@ Things to try:
 1. Run another browser than Firefox (Not tested)
 2. https://gist.github.com/wmealing/2dd2b543c4d3cff6cab7 AND https://bbs.archlinux.org/viewtopic.php?id=265239 (CURRENT: Disabled C-states in BIOS) >>> FIXED <<<
 
+### Dash
+1. install dash 'p -S dash'
+2. symlink 'ln -sfT dash /usr/bin/sh'
+3. Create a pacman hook containin at /etc/pacman.d/hooks/<file> containing the following:
+```
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = bash
+
+[Action]
+Description = Re-pointing /bin/sh symlink to dash...
+When = PostTransaction
+Exec = /usr/bin/ln -sfT dash /usr/bin/sh
+Depends = dash
+```
+
 ### Mopidy with Spotify
 
 ### Steam

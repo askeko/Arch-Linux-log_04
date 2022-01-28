@@ -16,6 +16,16 @@ Section "InputClass"
      Option "XkbModel" "pc105"
 EndSection
 ```
+
+### Automounting drives on startup
+If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
+
+My fstab entry:
+```
+# /dev/sdc2
+UUID=<DRIVE ID>   /mnt/storage    ntfs-3g     defaults,umask=000,dmask=027,fmask=137,uid=1000,gid=998 0 0
+```
+
 ### Nvidia drivers
 Packages: `pacman -S nvidia nvidia-settings`
 Make sure to reboot after installing the drivers.
@@ -70,6 +80,19 @@ When = PostTransaction
 Exec = /usr/bin/ln -sfT dash /usr/bin/sh
 Depends = dash
 ```
+
+### VS Code git extension
+https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues
+https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring
+In order to login with GitHub in VS Code, we have to setup the gnome-keyring properly. First make sure the following packages are installed - `gnome-keyring`, `libgnome-keyring` and optionally `seahorse`. Then add the following to `~/.config/x11/xinitrc`:
+```
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
+```
+Because I'm using a console-based login, add the following to `/etc/pam.d/login`: `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
+
+A restart, not just relog, might be required.
 
 ### Mopidy with Spotify
 

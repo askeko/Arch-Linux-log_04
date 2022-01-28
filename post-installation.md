@@ -88,7 +88,6 @@ In order to login with GitHub in VS Code, we have to setup the gnome-keyring pro
 ```
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
-
 ```
 Because I'm using a console-based login, add the following to `/etc/pam.d/login`: `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
 

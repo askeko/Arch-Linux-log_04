@@ -52,7 +52,8 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 
 ### Discord
 * `yay -S discord_arch_electron`  
-* OR `pacman -S discord` for non-electron. 
+* OR `pacman -S discord` for non-electron.
+* `yay -S betterdiscordctl-git` and install with `betterdiscordctl-git install` and apply theme in Discord.
 
 ### Managing dotfiles
 https://www.atlassian.com/git/tutorials/dotfiles
@@ -83,7 +84,7 @@ Depends = dash
 
 ### VS Code git extension
 https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues
-https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring
+https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring  
 In order to login with GitHub in VS Code, we have to setup the gnome-keyring properly. First make sure the following packages are installed - `gnome-keyring`, `libgnome-keyring` and optionally `seahorse`. Then add the following to `~/.config/x11/xinitrc`:
 ```
 eval $(gnome-keyring-daemon --start)

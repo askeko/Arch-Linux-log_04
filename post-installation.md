@@ -52,7 +52,7 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 
 ### Discord
 1. `yay -S discord_arch_electron`  
-  * OR `pacman -S discord` for non-electron.
+    * OR `pacman -S discord` for non-electron.
 2. `yay -S betterdiscordctl-git` and install with `betterdiscordctl-git install` and apply theme in Discord.
 
 ### Managing dotfiles

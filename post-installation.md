@@ -107,6 +107,8 @@ A restart, not just relog, might be required.
 8. `sudo chmod 644 /usr/share/fonts/WindowsFonts/*`
 9. Regen fontconfig cache `fc-cache --force`
 
+### Lutris
+
 ### Calcurse with Google Calendar
 
 ### Email (Neomutt?)

@@ -81,6 +81,7 @@ When = PostTransaction
 Exec = /usr/bin/ln -sfT dash /usr/bin/sh
 Depends = dash
 ```
+You can check the symlink with `ls -l /bin/sh`
 
 ### VS Code git extension
 https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues

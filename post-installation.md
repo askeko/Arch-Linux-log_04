@@ -17,6 +17,19 @@ Section "InputClass"
 EndSection
 ```
 
+### Mouse Acceleration
+To disable mouse acceleration create/modify the file `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf`:
+```
+Section "InputClass"
+	Identifier "My Mouse"
+	MatchIsPointer "yes"
+# set the following to 1 1 0 respectively to disable acceleration.
+	Option "AccelerationNumerator" "1"
+	Option "AccelerationDenominator" "1"
+	Option "AccelerationThreshold" "0"
+EndSection
+```
+
 ### Automounting drives on startup
 If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
 

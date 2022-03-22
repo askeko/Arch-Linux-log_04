@@ -29,6 +29,14 @@ Section "InputClass"
 	Option "AccelerationThreshold" "0"
 EndSection
 ```
+### Razer mouse support
+Packages:
+```
+yay -S openrazer-meta
+yay -S razergenie
+pacman -S linux-headers
+```
+
 
 ### Automounting drives on startup
 If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.

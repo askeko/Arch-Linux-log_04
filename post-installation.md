@@ -32,9 +32,9 @@ EndSection
 ### Razer mouse support
 Packages:
 ```
+pacman -S linux-headers
 yay -S openrazer-meta
 yay -S razergenie
-pacman -S linux-headers
 ```
 
 

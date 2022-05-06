@@ -88,7 +88,7 @@ Things to try:
 ### Dash
 1. install dash 'p -S dash'
 2. symlink 'ln -sfT dash /usr/bin/sh'
-3. Create a pacman hook containin at /etc/pacman.d/hooks/<file> containing the following:
+3. Create a pacman hook at /etc/pacman.d/hooks/dash.hook containing the following:
 ```
 [Trigger]
 Type = Package
@@ -115,6 +115,9 @@ export SSH_AUTH_SOCK
 Because I'm using a console-based login, add the following to `/etc/pam.d/login`: `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
 
 A restart, not just relog, might be required.
+
+### VS Code settings import
+Get the Settings Sync extention, log in with git and import with `Shift + Alt + D`
 
 ### Mopidy with Spotify
 

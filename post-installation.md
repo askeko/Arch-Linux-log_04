@@ -5,6 +5,12 @@ After following the steps in the [installation guide](https://github.com/absenti
 1. curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh
 2. sh aarbs.sh
 
+### Importing dotfiles
+After running the script, simply run the following command to import all my dotfiles:
+```
+chezmoi init --apply https://github.com/username/dotfiles.git
+```
+
 ### If startx
 The keyboard layout will by default be set to US (you can check options with `setxkbmap -print -verbose 10`), to change this use the following command: `setxkbmap -model pc105 -layout dk`.
 To make it persistent create or modify the file `/etc/X11/xorg.conf.d/00-keyboard.conf` and input:

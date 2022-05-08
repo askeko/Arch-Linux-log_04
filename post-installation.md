@@ -88,7 +88,7 @@ Reboot.
 2. `yay -S betterdiscordctl-git` and install with `betterdiscordctl-git install` and apply theme in Discord.
 
 ### Managing dotfiles
-https://www.atlassian.com/git/tutorials/dotfiles
+https://www.chezmoi.io/
 
 ## Fixing system freeze (AMD specific)
 Things to try:

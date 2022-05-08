@@ -35,14 +35,6 @@ Section "InputClass"
 	Option "AccelerationThreshold" "0"
 EndSection
 ```
-### Razer mouse support
-Packages:
-```
-pacman -S linux-headers
-yay -S openrazer-meta
-yay -S razergenie
-```
-
 
 ### Automounting drives on startup
 If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
@@ -68,6 +60,14 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`.
 3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`. >>>>>> This seems to work? <<<<<<<
 4. Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xprofile` is enough?
+
+### Razer mouse support
+Packages:
+```
+pacman -S linux-headers
+yay -S openrazer-meta
+yay -S razergenie
+```
 
 ### VPN (PIA)
 1. Install from AUR: `yay -S piavpn-bin`.

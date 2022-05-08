@@ -68,6 +68,11 @@ pacman -S linux-headers
 yay -S openrazer-meta
 yay -S razergenie
 ```
+Add user to plugdev:
+```
+sudo gpasswd -a absentia plugdev
+```
+Reboot.
 
 ### VPN (PIA)
 1. Install from AUR: `yay -S piavpn-bin`.

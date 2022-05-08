@@ -97,8 +97,8 @@ Things to try:
 2. https://gist.github.com/wmealing/2dd2b543c4d3cff6cab7 AND https://bbs.archlinux.org/viewtopic.php?id=265239 (CURRENT: Disabled C-states in BIOS) >>> FIXED <<<
 
 ### Dash
-1. install dash 'p -S dash'
-2. symlink 'ln -sfT dash /usr/bin/sh'
+1. install dash `p -S dash`
+2. symlink `ln -sfT dash /usr/bin/sh`
 3. Create a pacman hook at /etc/pacman.d/hooks/dash.hook containing the following:
 ```
 [Trigger]
@@ -114,6 +114,9 @@ Exec = /usr/bin/ln -sfT dash /usr/bin/sh
 Depends = dash
 ```
 You can check the symlink with `ls -l /bin/sh`
+
+### Git
+Login to github via `gh auth login`.
 
 ### VS Code git extension
 https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues

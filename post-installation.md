@@ -39,7 +39,7 @@ EndSection
 ### Automounting drives on startup
 If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
 
-My `/dev/fstab` entry (Drive ID can be located with `lsblk -f`:
+My `/etc/fstab` entry (Drive ID can be located with `lsblk -f`:
 ```
 # /dev/sdc2
 UUID=<DRIVE ID>   /mnt/storage    ntfs-3g     defaults,umask=000,dmask=027,fmask=137,uid=1000,gid=998 0 0

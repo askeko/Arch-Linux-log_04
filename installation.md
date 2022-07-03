@@ -34,6 +34,15 @@ Verify network is listed and connected (wired):
 ```
 ping www.google.com
 ```
+OPTIONAL CONNECT VIA WI-FI:
+Make sure the card is not blocked by executing `rfkill`. If blocked: `rfkill unblock all`
+1. `iwctl` for the wi-fi interactive prompt
+2. List devices: `<device> list`
+3. Scan for networks (no output): `station <device> scan`
+4. List networks: `station <device> get-networks`
+5. Connect to network: `station <device> connect <SSID>`
+6. start daemon for all network interfaces: `systemctl start dhcpcd.service`
+
 Use `timedatectl` to ensure the system clock is accurate:
 ```
 timedatectl set-ntp true

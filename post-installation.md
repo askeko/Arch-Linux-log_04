@@ -10,6 +10,7 @@ After running the script, simply run the following command to import all my dotf
 ```
 chezmoi init --apply https://github.com/username/dotfiles.git
 ```
+You might have to rebuild bat cache for the bat theme to work: `bat cache --build`.
 
 ### If startx
 The keyboard layout will by default be set to US (you can check options with `setxkbmap -print -verbose 10`), to change this use the following command: `setxkbmap -model pc105 -layout dk`.

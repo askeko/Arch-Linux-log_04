@@ -170,3 +170,5 @@ Get the Settings Sync extention, log in with git and import with `Shift + Alt + 
 2. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`
 3. Add user to the video group: `sudo gpasswd -a absentia video` (not sure if this is actually necessary)
 4. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`
+
+Might be enough to just append to the already listed nopasswd commands in visudo on my system.

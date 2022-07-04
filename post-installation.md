@@ -151,3 +151,10 @@ Get the Settings Sync extention, log in with git and import with `Shift + Alt + 
 ### Calcurse with Google Calendar
 
 ### Email (Neomutt?)
+
+## Laptop specific
+### Screen brightness
+1. Install acpilight: `pacman -S acpilight`
+2. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`
+3. Add user to the video group: `sudo gpasswd -a absentia video` (not sure if this is actually necessary)
+4. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`

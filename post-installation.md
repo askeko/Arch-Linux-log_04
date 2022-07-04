@@ -62,6 +62,17 @@ The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird w
 3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`. >>>>>> This seems to work? <<<<<<<
 4. Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xprofile` is enough?
 
+### Integrated AMD gpu + screen tearing fix
+1. `pacman -S xf86-video-amdgpu
+2. create `/etc/X11/xorg.conf.d/20-amd-gpu.conf` and input:
+```
+Section "Device
+	Identifier "AMD Graphics"
+	Driver     "amdgpu"
+	Option     "TearFree" "true"
+EndSection
+```
+
 ### Razer mouse support
 Packages:
 ```

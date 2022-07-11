@@ -166,9 +166,21 @@ Get the Settings Sync extention, log in with git and import with `Shift + Alt + 
 
 ## Laptop specific
 ### Screen brightness
-1. Install acpilight: `pacman -S acpilight`
-2. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`
-3. Add user to the video group: `sudo gpasswd -a absentia video` (not sure if this is actually necessary)
-4. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`
+1. Install acpilight: `pacman -S acpilight`.
+2. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`.
+3. Add user to the video group: `sudo gpasswd -a absentia video` (not sure if this is actually necessary).
+4. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`.
 
 Might be enough to just append to the already listed nopasswd commands in visudo on my system.
+
+### Bluetooth
+1. Install `bluez bluez-utils`.
+2. `systemctl start/enable bluetooth.service`.
+3. start `bluetoothctl` interactive command. `help` for list of available commands.
+4. Enter `power on`, default off and will turn off again on reboot.
+5. Discovery mode `scan on`.
+6. Enter `devices` to get the MAC addresses of the device you want to connect to.
+7. Turn the agent on with `agent on`
+8. Enter `pair MAC_address`.
+9. Enter `trust MAC_address`.
+10. Enter `connect MAC_address`.

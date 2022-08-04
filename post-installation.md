@@ -186,14 +186,5 @@ Might be enough to just append to the already listed nopasswd commands in visudo
 10. Enter `connect MAC_address`.
 
 ### Notes on Wi-fi
-Until now default NetworkManager config worked just fine, however trying to connect to my public library Wi-fi Network using the OWE security protocol turned out to not #justwork. I'm still uncertain as to what caused the issues. I fixed it by replacing the default wireless daemon, wpa_supplicant, with iwd. I also had to co into edit connection via the nmtui and manually set security protocol, as well as BSSID. These are the steps I took:
-1. `sudo pacman -S iwd`
-2. `sudo systemctl stop wpa_supplicant`
-3. `sudo systemctl mask wpa_supplicant`
-4. `sudo systemctl enable --now iwd.service`
-5. `sudo systemctl daemon-reload`
-6. `sudo systemctl start iwd.service`
-7. `nmtui`
-8. Edit a connection
-9. Set Security protocol
-10. Set BSSID (Get the BSSID by running this command: `nmcli d wifi list`
+Maybe have to install dhclient for eduroam to work? Not really sure what the problem is. Tried to make it connect for several hours, however it suddenly worked some time after installing the dhclient...?
+WEIRD!

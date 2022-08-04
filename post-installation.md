@@ -168,7 +168,7 @@ Get the Settings Sync extention, log in with git and import with `Shift + Alt + 
 ### Screen brightness
 1. Install acpilight: `pacman -S acpilight`.
 2. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`.
-3. Add user to the video group: `sudo gpasswd -a absentia video` (not sure if this is actually necessary).
+3. Add user to the video group: `sudo gpasswd -a <username> video` (not sure if this is actually necessary).
 4. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`.
 
 Might be enough to just append to the already listed nopasswd commands in visudo on my system.
@@ -184,6 +184,7 @@ Might be enough to just append to the already listed nopasswd commands in visudo
 8. Enter `pair MAC_address`.
 9. Enter `trust MAC_address`.
 10. Enter `connect MAC_address`.
+You might have to delete the device and re-pair/trust and connect for it to be reckognized as a sound device.
 
 ### Notes on Wi-fi
 Maybe have to install dhclient for eduroam to work? Not really sure what the problem is. Tried to make it connect for several hours, however it suddenly worked some time after installing the dhclient...?

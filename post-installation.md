@@ -166,12 +166,12 @@ Get the Settings Sync extention, log in with git and import with `Shift + Alt + 
 
 ## Colors
 ### List of places colors are modified
-DWM
-gtk-3.0 (theme)
-rofi
-zathura
-dunst
-kitty
+DWM  
+gtk-3.0 (theme)  
+rofi  
+zathura  
+dunst  
+kitty  
 
 
 ## Laptop specific

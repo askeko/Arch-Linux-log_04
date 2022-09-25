@@ -164,6 +164,16 @@ Get the Settings Sync extention, log in with git and import with `Shift + Alt + 
 
 ### Email (Neomutt?)
 
+## Colors
+### List of places colors are modified
+DWM
+gtk-3.0 (theme)
+rofi
+zathura
+dunst
+kitty
+
+
 ## Laptop specific
 ### Screen brightness
 1. Install acpilight: `pacman -S acpilight`.

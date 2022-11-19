@@ -91,8 +91,9 @@ Reboot.
 2. Start daemon `sudo systemctl start piavpn.service`
 3. Enable on startup `sudo systemctl enable piavpn.service`
 
-### Bitwarden
-`pacman -S bitwarden`
+### qt theme
+1. `pacman -S qt5ct`
+2. `sudo nvim /etc/environment` write: `QT_QPA_PLATFORMTHEME=qt5ct`
 
 ### Discord
 1. `yay -S discord_arch_electron`  

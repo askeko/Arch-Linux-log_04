@@ -172,6 +172,7 @@ rofi
 zathura  
 dunst  
 kitty  
+bat  
 
 
 ## Laptop specific

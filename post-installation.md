@@ -55,6 +55,14 @@ sudo nvidia-settings
 ```
 Save to `/etc/X11/xorg.conf`.
 
+### Cursor theme fix for Polybar
+1. Copy the theme folder (in my case "volantes_cursors") from ~/.local/share/icons/ to /usr/share/icons/. 
+2. Edit the file /usr/share/icons/default/index.theme with the name of your theme as shown below:
+```
+[Icon Theme]
+Inherits=volantes_cursors
+```
+
 #### Nvidia mouse/UI fix
 The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird way. It only seems to occur when one monitor is landscape and the other is portrait. I've done a few things to fix this:
 1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`.

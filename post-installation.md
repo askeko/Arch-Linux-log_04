@@ -192,6 +192,9 @@ bat
 
 Might be enough to just append to the already listed nopasswd commands in visudo on my system.
 
+### Wacom stops working (pen)
+```sudo modprobe --remove wacom ; sudo modprobe wacom```
+
 ### Bluetooth
 1. Install `bluez bluez-utils`.
 2. `systemctl start/enable bluetooth.service`.

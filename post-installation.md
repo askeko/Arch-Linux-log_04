@@ -81,26 +81,13 @@ Section "Device
 EndSection
 ```
 
-### Razer mouse support
-Packages:
-```
-pacman -S linux-headers
-yay -S openrazer-meta
-yay -S razergenie
-```
-Add user to plugdev:
-```
-sudo gpasswd -a absentia plugdev
-```
-Reboot.
+### Rofi as dmenu replacement
+`sudo ln -s /usr/bin/rofi /usr/bin/dmenu`
 
 ### VPN (PIA)
-1. Install from AUR: `yay -S piavpn-bin`.
+1. Install from AUR: `yay -S piavpn-bin`
 2. Start daemon `sudo systemctl start piavpn.service`
 3. Enable on startup `sudo systemctl enable piavpn.service`
-
-### qt theme
-Need to figure out
 
 ### Discord
 1. `yay -S discord_arch_electron`  

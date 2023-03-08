@@ -1,7 +1,7 @@
 # Post installation
 
 ### The install script
-After following the steps in the [installation guide](https://github.com/absentia-gh/artix-linux-log/blob/main/installation.md).
+After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).
 1. curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh
 2. sh aarbs.sh
 

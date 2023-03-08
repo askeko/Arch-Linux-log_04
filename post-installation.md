@@ -8,7 +8,7 @@ After following the steps in the [installation guide](https://github.com/askeko/
 ### Importing dotfiles
 After running the script, simply run the following command to import all my dotfiles:
 ```
-chezmoi init --apply https://github.com/username/dotfiles.git
+chezmoi init --apply https://github.com/askeko/absrice.git
 ```
 You might have to rebuild bat cache for the bat theme to work: `bat cache --build`.
 

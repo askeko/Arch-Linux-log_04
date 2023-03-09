@@ -171,11 +171,12 @@ bat
 
 
 ## Laptop specific
-### Screen brightness
+### Screen brightness (Added xbacklight to sudoers.d in AARBS script. May only need to install acpilight if at all and xbindkeys
 1. Install acpilight: `pacman -S acpilight`.
-2. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`.
-3. Add user to the video group: `sudo gpasswd -a <username> video` (not sure if this is actually necessary).
-4. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`.
+2. Install xbindkeys: `pacman -S xbindkeys`.
+3. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`.
+4. Add user to the video group: `sudo gpasswd -a <username> video` (not sure if this is actually necessary).
+5. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`. (Not sure if need to use sudo anymore)
 
 Might be enough to just append to the already listed nopasswd commands in visudo on my system.
 

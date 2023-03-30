@@ -47,13 +47,9 @@ UUID=<DRIVE ID>   /mnt/storage    ntfs-3g     defaults,umask=000,dmask=027,fmask
 ```
 
 ### Nvidia drivers
-Packages: `pacman -S nvidia nvidia-settings`
-Make sure to reboot after installing the drivers.
-Sudo into nvidia-settings and check both `Force Composition Pipeline` and `Force Full Composition Pipeline` if you experience screen tearing. Save to X configuration file. You may have to manually create the file `touch /etc/X11/xorg.conf` first.
-```
-sudo nvidia-settings
-```
-Save to `/etc/X11/xorg.conf`.
+1. Packages: `pacman -S nvidia nvidia-settings`
+2. Remove `kms` from the `HOOKS` array in `/etc/mkinitcpio.conf` and regenerate the initramfs with `sudo mkinitcpio -P`. This will prevent the initramfs from containing the nouveau module making sure the kernel cannot load it during early boot. 
+3. Sudo into nvidia-settings and check both `Force Composition Pipeline` and `Force Full Composition Pipeline` if you experience screen tearing. Save to X configuration file. You may have to manually create the file `touch /etc/X11/xorg.conf` first.
 
 ### Cursor theme fix for Polybar
 1. Copy the theme folder (in my case "volantes_cursors") from ~/.local/share/icons/ to /usr/share/icons/. 

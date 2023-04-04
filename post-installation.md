@@ -167,6 +167,10 @@ bat
 
 
 ## Laptop specific
+### Accelerometer support
+`pacman -S iio-sensor-proxy`
+This should make the keyboard activate and deactivate properly from tablet to PC mode!
+
 ### Screen brightness (Added xbacklight to sudoers.d in AARBS script. May only need to install acpilight if at all and xbindkeys
 1. Install acpilight: `pacman -S acpilight`.
 2. Install xbindkeys: `pacman -S xbindkeys`.

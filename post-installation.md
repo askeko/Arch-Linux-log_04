@@ -201,10 +201,10 @@ Maybe have to install dhclient for eduroam to work? Not really sure what the pro
 WEIRD!
 
 ### Thunderbird uni mail setup
-Name: NAME
-Email: Actual email people see (not username)
+* Name: NAME
+* Email: Actual email people see (not username)
 
-Your login: username (without @)
+* Your login: username (without @)
 
--> Manual configuration -> follow instructions on uni site with username (without @)
+* -> Manual configuration -> follow instructions on uni site with username (without @)
 Authentication method is normal password (might have to change in smtp server settings after logging in)

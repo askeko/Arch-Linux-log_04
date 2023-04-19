@@ -199,3 +199,12 @@ You might have to delete the device and re-pair/trust and connect for it to be r
 ### Notes on Wi-fi
 Maybe have to install dhclient for eduroam to work? Not really sure what the problem is. Tried to make it connect for several hours, however it suddenly worked some time after installing the dhclient...?
 WEIRD!
+
+### Thunderbird uni mail setup
+Name: NAME
+Email: Actual email people see (not username)
+
+Your login: username (without @)
+
+-> Manual configuration -> follow instructions on uni site with username (without @)
+Authentication method is normal password (might have to change in smtp server settings after logging in)

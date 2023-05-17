@@ -165,6 +165,8 @@ dunst
 kitty  
 bat  
 
+### Fonts
+Some symbols and fonts might need to have windows fonts installed (e.g. vscode symbolic link indicator). Do it with aur package or with installation medium.
 
 ## Laptop specific
 ### Accelerometer support

@@ -169,6 +169,23 @@ nvim
 ### Fonts
 Some symbols and fonts might need to have windows fonts installed (e.g. vscode symbolic link indicator). Do it with aur package or with installation medium.
 
+### Thunderbird uni mail setup
+* Name: NAME
+* Email: Actual email people see (not username)
+
+* Your login: username (without @)
+
+* -> Manual configuration -> follow instructions on uni site with username (without @)
+Authentication method is normal password (might have to change in smtp server settings after logging in)
+(VPN needed for uni mail now)
+
+## Wayland / Hyprland
+### Screensharing
+https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
+https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
+
+Make sure to consult both pages.
+
 ## Laptop specific
 ### Accelerometer support
 `pacman -S iio-sensor-proxy`
@@ -206,11 +223,5 @@ You might have to delete the device and re-pair/trust and connect for it to be r
 Maybe have to install dhclient for eduroam to work? Not really sure what the problem is. Tried to make it connect for several hours, however it suddenly worked some time after installing the dhclient...?
 WEIRD!
 
-### Thunderbird uni mail setup
-* Name: NAME
-* Email: Actual email people see (not username)
 
-* Your login: username (without @)
 
-* -> Manual configuration -> follow instructions on uni site with username (without @)
-Authentication method is normal password (might have to change in smtp server settings after logging in)

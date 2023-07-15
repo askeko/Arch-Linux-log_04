@@ -182,6 +182,7 @@ Authentication method is normal password (might have to change in smtp server se
 ## Wayland / Hyprland
 ### Screensharing
 https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
+
 https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
 
 Make sure to consult both pages.

@@ -218,10 +218,3 @@ Might be enough to just append to the already listed nopasswd commands in visudo
 9. Enter `trust MAC_address`.
 10. Enter `connect MAC_address`.
 You might have to delete the device and re-pair/trust and connect for it to be reckognized as a sound device.
-
-### Notes on Wi-fi
-Maybe have to install dhclient for eduroam to work? Not really sure what the problem is. Tried to make it connect for several hours, however it suddenly worked some time after installing the dhclient...?
-WEIRD!
-
-
-

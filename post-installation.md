@@ -12,6 +12,15 @@ chezmoi init --apply https://github.com/askeko/absrice.git
 ```
 You might have to rebuild bat cache for the bat theme to work: `bat cache --build`.
 
+## Wayland / Hyprland
+### Screensharing
+https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
+
+https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
+
+Make sure to consult both pages.
+
+## Xorg
 ### If startx
 The keyboard layout will by default be set to US (you can check options with `setxkbmap -print -verbose 10`), to change this use the following command: `setxkbmap -model pc105 -layout dk`.
 To make it persistent create or modify the file `/etc/X11/xorg.conf.d/00-keyboard.conf` and input:
@@ -35,15 +44,6 @@ Section "InputClass"
 	Option "AccelerationDenominator" "1"
 	Option "AccelerationThreshold" "0"
 EndSection
-```
-
-### Automounting drives on startup
-If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
-
-My `/etc/fstab` entry (Drive ID can be located with `lsblk -f`:
-```
-# /dev/sdc2
-UUID=<DRIVE ID>   /mnt/storage    ntfs-3g     defaults,umask=000,dmask=027,fmask=137,uid=1000,gid=998 0 0
 ```
 
 ### Nvidia drivers
@@ -77,6 +77,16 @@ Section "Device
 EndSection
 ```
 
+## MISC
+### Automounting drives on startup
+If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
+
+My `/etc/fstab` entry (Drive ID can be located with `lsblk -f`:
+```
+# /dev/sdc2
+UUID=<DRIVE ID>   /mnt/storage    ntfs-3g     defaults,umask=000,dmask=027,fmask=137,uid=1000,gid=998 0 0
+```
+
 ### Rofi as dmenu replacement
 `sudo ln -s /usr/bin/rofi /usr/bin/dmenu`
 
@@ -92,12 +102,6 @@ EndSection
 
 ### Managing dotfiles
 https://www.chezmoi.io/
-
-## Fixing system freeze (AMD specific)
-Things to try:
-
-1. Run another browser than Firefox (Not tested)
-2. https://gist.github.com/wmealing/2dd2b543c4d3cff6cab7 AND https://bbs.archlinux.org/viewtopic.php?id=265239 (CURRENT: Disabled C-states in BIOS) >>> FIXED <<<
 
 ### Dash
 1. install dash `p -S dash`
@@ -122,6 +126,7 @@ You can check the symlink with `ls -l /bin/sh`
 Login to github via `gh auth login`.
 
 ### VS Code git extension
+#### (Needs to be tested on Wayland/Hyprland)
 https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues
 https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring  
 In order to login with GitHub in VS Code, we have to setup the gnome-keyring properly. First make sure the following packages are installed - `gnome-keyring`, `libgnome-keyring` and optionally `seahorse`. Then add the following to `~/.config/x11/xinitrc`:
@@ -129,7 +134,7 @@ In order to login with GitHub in VS Code, we have to setup the gnome-keyring pro
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 ```
-Because I'm using a console-based login, add the following to `/etc/pam.d/login`: `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
+If using console-based login, add the following to `/etc/pam.d/login`: `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
 
 A restart, not just relog, might be required.
 
@@ -157,7 +162,9 @@ Get the Settings Sync extention, log in with git and import with `Shift + Alt + 
 
 ## Colors
 ### List of places colors are modified
-DWM  
+DWM / Hyprland
+Waybar
+Eww
 gtk-3.0 (theme)  
 rofi  
 zathura  
@@ -169,7 +176,14 @@ nvim
 ### Fonts
 Some symbols and fonts might need to have windows fonts installed (e.g. vscode symbolic link indicator). Do it with aur package or with installation medium.
 
+AUR packages:
+```
+ttf-ms-win10-auto
+ttf-ms-win11-auto
+```
+
 ### Thunderbird uni mail setup
+#### Needs VPN for uni acc
 * Name: NAME
 * Email: Actual email people see (not username)
 
@@ -179,15 +193,8 @@ Some symbols and fonts might need to have windows fonts installed (e.g. vscode s
 Authentication method is normal password (might have to change in smtp server settings after logging in)
 (VPN needed for uni mail now)
 
-## Wayland / Hyprland
-### Screensharing
-https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
-
-https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
-
-Make sure to consult both pages.
-
 ## Laptop specific
+#### The following except for bluetooth needs to be tested on Wayland/Hyprland
 ### Accelerometer support
 `pacman -S iio-sensor-proxy`
 This should make the keyboard activate and deactivate properly from tablet to PC mode!

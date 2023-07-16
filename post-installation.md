@@ -154,25 +154,6 @@ Get the Settings Sync extention, log in with git and import with `Shift + Alt + 
 8. `sudo chmod 644 /usr/share/fonts/WindowsFonts/*`
 9. Regen fontconfig cache `fc-cache --force`
 
-### Lutris
-
-### Calcurse with Google Calendar
-
-### Email (Neomutt?)
-
-## Colors
-### List of places colors are modified
-DWM / Hyprland
-Waybar
-Eww
-gtk-3.0 (theme)  
-rofi  
-zathura  
-dunst  
-kitty  
-bat  
-nvim
-
 ### Fonts
 Some symbols and fonts might need to have windows fonts installed (e.g. vscode symbolic link indicator). Do it with aur package or with installation medium.
 
@@ -192,6 +173,19 @@ ttf-ms-win11-auto
 * -> Manual configuration -> follow instructions on uni site with username (without @)
 Authentication method is normal password (might have to change in smtp server settings after logging in)
 (VPN needed for uni mail now)
+
+## Colors
+### List of places colors are modified
+DWM / Hyprland
+Waybar
+Eww
+gtk-3.0 (theme)  
+rofi  
+zathura  
+dunst  
+kitty  
+bat  
+nvim
 
 ## Laptop specific
 #### The following except for bluetooth needs to be tested on Wayland/Hyprland

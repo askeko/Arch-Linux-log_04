@@ -33,9 +33,6 @@ My `/etc/fstab` entry (Drive ID can be located with `lsblk -f`:
 UUID=<DRIVE ID>   /mnt/storage    ntfs-3g     defaults,umask=000,dmask=027,fmask=137,uid=1000,gid=998 0 0
 ```
 
-### Rofi as dmenu replacement
-`sudo ln -s /usr/bin/rofi /usr/bin/dmenu`
-
 ### VPN (PIA)
 1. Install from AUR: `yay -S piavpn-bin`
 2. Start daemon `sudo systemctl start piavpn.service`
@@ -181,6 +178,9 @@ Section "InputClass"
 	Option "AccelerationThreshold" "0"
 EndSection
 ```
+
+### Rofi as dmenu replacement
+`sudo ln -s /usr/bin/rofi /usr/bin/dmenu`
 
 ### Nvidia drivers
 1. Packages: `pacman -S nvidia nvidia-settings`

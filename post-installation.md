@@ -116,19 +116,18 @@ Authentication method is normal password (might have to change in smtp server se
 
 ## Colors
 ### List of places colors are modified
-DWM / Hyprland
-Waybar
-Eww
-gtk-3.0 (theme)  
-rofi  
-zathura  
-dunst  
-kitty  
-bat  
-nvim
+* Hyprland / DWM
+* Waybar
+* Eww
+* gtk / qt
+* wofi / rofi
+* dunst
+* kitty
+* bat
+* nvim
 
 ## Laptop specific
-#### The following except for bluetooth needs to be tested on Wayland/Hyprland
+#### Unsure if pinch zoom is an issue in Hyprland
 ### Accelerometer support
 `pacman -S iio-sensor-proxy`
 This should make the keyboard activate and deactivate properly from tablet to PC mode!

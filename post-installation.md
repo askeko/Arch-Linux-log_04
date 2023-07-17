@@ -65,9 +65,6 @@ Depends = dash
 ```
 You can check the symlink with `ls -l /bin/sh`
 
-### Git
-Login to github via `gh auth login`.
-
 ### VS Code git extension
 #### (Needs to be tested on Wayland/Hyprland)
 https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues

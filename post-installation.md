@@ -205,6 +205,9 @@ edit `/etc/security/pam_env.conf` and add `MOZ_USE_XINPUT2 DEFAULT=1` at the bot
 
 Might be enough to just append to the already listed nopasswd commands in visudo on my system.
 
+### Touch Pen
+Try opentabletdriver
+
 ### Wacom stops working (pen)
 ```sudo modprobe --remove wacom ; sudo modprobe wacom```
 

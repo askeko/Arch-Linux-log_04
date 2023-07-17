@@ -1,8 +1,14 @@
 # Post installation
 
 ## Wayland migration notes
+NOTES:
 * nvm (node version manager, script installed - add to aarbs.sh?)
 * eww - built manually, use rustup
+
+TODO:
+* lf file previews
+* Probably gtk (nwg-look or envvars
+* and qt (qt6ct) 
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).

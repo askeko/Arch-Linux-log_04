@@ -26,7 +26,7 @@ Check keymaps and modify appropriately:
 ls /usr/share/kbd/keymaps/**/*.map.gz
 loadkeys dvorak
 ```
-Alternatively `loadkeys dk` or `loadkeys en`
+Alternatively `loadkeys dk` or `loadkeys en`.
 
 Verify UEFI mode enabled:
 ```
@@ -89,7 +89,7 @@ Now we can format and mount the partitions:
 9. Open `locale.conf`: `nvim /etc/locale.conf`.
 10. Enter `LANG=en_DK.UTF-8` and write to file.
 11. Open `vconsole.conf`: `nvim /etc/vconsole.conf`.
-12. Enter `KEYMAP=dk` and write to file.
+12. Enter `KEYMAP=dvorak` and write to file. Alternatively `loadkeys dk` or `loadkeys en`.
 
 ### Internet connection
 Install NetworkManager:

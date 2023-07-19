@@ -24,8 +24,10 @@ dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 Check keymaps and modify appropriately:
 ```
 ls /usr/share/kbd/keymaps/**/*.map.gz
-loadkeys dk
+loadkeys dvorak
 ```
+Alternatively `loadkeys dk` or `loadkeys en`
+
 Verify UEFI mode enabled:
 ```
 ls /sys/firmware/efi/efivars

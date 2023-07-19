@@ -89,7 +89,7 @@ Now we can format and mount the partitions:
 9. Open `locale.conf`: `nvim /etc/locale.conf`.
 10. Enter `LANG=en_DK.UTF-8` and write to file.
 11. Open `vconsole.conf`: `nvim /etc/vconsole.conf`.
-12. Enter `KEYMAP=dvorak` and write to file. Alternatively `loadkeys dk` or `loadkeys en`.
+12. Enter `KEYMAP=dvorak` and write to file. Alternatively `KEYMAP=dk` or `KEYMAP=en`.
 
 ### Internet connection
 Install NetworkManager:

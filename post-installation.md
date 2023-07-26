@@ -3,6 +3,7 @@
 ## Wayland migration notes
 NOTES:
 * nvm (node version manager, script installed - add to aarbs.sh (remember to subsequently install node)?)
+* rustup install rust in script (after pkg installed)
 * eww - built manually, use rustup
 
 TODO:

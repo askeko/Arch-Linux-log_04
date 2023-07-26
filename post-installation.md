@@ -8,7 +8,8 @@ NOTES:
 TODO:
 * lf file previews
 * Probably gtk (nwg-look or envvars
-* and qt (qt6ct) 
+* and qt (qt6ct)
+* Tablet/pen support (open tablet driver)
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).

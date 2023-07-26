@@ -8,8 +8,6 @@ NOTES:
 
 TODO:
 * lf file previews
-* Probably gtk (nwg-look or envvars
-* and qt (qt6ct)
 * Tablet/pen support (open tablet driver)
 
 ### The install script

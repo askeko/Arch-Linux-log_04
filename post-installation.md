@@ -2,11 +2,13 @@
 
 ## Wayland migration notes
 TODO:
-* lf config
 * fix waybar - maybe the version from [wiki - statusbars](https://wiki.hyprland.org/Useful-Utilities/Status-Bars/)
 * colors in Hyprland
 * nvm install with aarbs.sh + node
 * install rust with rustup in aarbs.sh (remember to do it after packages are installed)
+
+#### Longterm improvements
+* Look through documentation of lf
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).

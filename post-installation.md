@@ -1,13 +1,11 @@
 # Post installation
 
 ## Wayland migration notes
-NOTES:
-* nvm (node version manager, script installed - add to aarbs.sh (remember to subsequently install node)?)
-* rustup install rust in script (after pkg installed)
-* eww - built manually, use rustup
-
 TODO:
 * lf file previews
+* make eww bar
+* nvm install with aarbs.sh + node
+* install rust with rustup in aarbs.sh (remember to do it after packages are installed)
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).

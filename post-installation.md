@@ -3,7 +3,7 @@
 ## Wayland migration notes
 TODO:
 * lf config
-* make eww bar
+* fix waybar - maybe the version from [wiki - statusbars](https://wiki.hyprland.org/Useful-Utilities/Status-Bars/)
 * colors in Hyprland
 * nvm install with aarbs.sh + node
 * install rust with rustup in aarbs.sh (remember to do it after packages are installed)

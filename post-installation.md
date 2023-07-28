@@ -2,8 +2,9 @@
 
 ## Wayland migration notes
 TODO:
-* lf file previews
+* lf config
 * make eww bar
+* colors in Hyprland
 * nvm install with aarbs.sh + node
 * install rust with rustup in aarbs.sh (remember to do it after packages are installed)
 

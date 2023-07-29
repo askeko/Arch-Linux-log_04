@@ -2,7 +2,7 @@
 
 ## Wayland migration notes
 TODO:
-* waybar / eww
+* waybar / eww (eww built in ~/.local/src, symlink in ~/.local/bin)
 * colors in Hyprland
 * nvm install with aarbs.sh + node
 * install rust with rustup in aarbs.sh (remember to do it after packages are installed)

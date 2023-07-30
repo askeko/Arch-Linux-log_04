@@ -14,6 +14,8 @@ After following the steps in the [installation guide](https://github.com/askeko/
 1. curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh
 2. sh aarbs.sh
 
+To get the bar working follow instructions: [eww](https://elkowar.github.io/eww/)
+
 ### Importing dotfiles
 After running the script, simply run the following command to import all my dotfiles:
 ```

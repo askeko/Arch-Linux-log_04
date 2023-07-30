@@ -2,7 +2,6 @@
 
 ## Wayland migration notes
 TODO:
-* waybar / eww (eww built in ~/.local/src, symlink in ~/.local/bin)
 * colors in Hyprland
 * nvm does not install if not logged into the user (script)
 * nvm export in .zprofile instead of shell/profile

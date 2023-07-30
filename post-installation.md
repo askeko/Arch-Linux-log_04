@@ -15,7 +15,7 @@ After following the steps in the [installation guide](https://github.com/askeko/
 1. curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh
 2. sh aarbs.sh
 
-To get the bar working follow instructions: [eww](https://elkowar.github.io/eww/)
+To get the bar working follow instructions: [eww](https://elkowar.github.io/eww/) 
 Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
 
 ### Importing dotfiles

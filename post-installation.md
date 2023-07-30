@@ -3,13 +3,7 @@
 ## Wayland migration notes
 TODO:
 * colors in Hyprland
-* nvm does not install if not logged into the user (script)
-* nvm export in .zprofile instead of shell/profile
-* mouse pointer is not installed (volante)
-* cleanup gtk folders as it is not applied before nwg-look anyway
-* cleanup qt folders and use only what is provided from imported theme
-* mouse pointer is changing size
-* remove lazy-lock from dots (cleanup nvim dots)
+* fix cursor
 
 #### Longterm improvements
 * Look through documentation of lf
@@ -20,7 +14,11 @@ After following the steps in the [installation guide](https://github.com/askeko/
 1. curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh
 2. sh aarbs.sh
 
-To get the bar working follow instructions: [eww](https://elkowar.github.io/eww/) 
+Install Rust: `rustup default stable`
+
+Install NVM+Node: [nvm](https://github.com/nvm-sh/nvm)
+
+To get the bar working follow instructions (build in .local/src): [eww](https://elkowar.github.io/eww/) 
 
 ### Importing dotfiles
 After running the script, simply run the following command to import all my dotfiles:

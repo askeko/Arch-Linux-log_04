@@ -4,7 +4,13 @@
 TODO:
 * waybar / eww (eww built in ~/.local/src, symlink in ~/.local/bin)
 * colors in Hyprland
-* test if nvm, node and rustc is properly installed with the script
+* nvm does not install if not logged into the user (script)
+* nvm export in .zprofile instead of shell/profile
+* mouse pointer is not installed (volante)
+* cleanup gtk folders as it is not applied before nwg-look anyway
+* cleanup qt folders and use only what is provided from imported theme
+* mouse pointer is changing size
+* remove lazy-lock from dots (cleanup nvim dots)
 
 #### Longterm improvements
 * Look through documentation of lf
@@ -17,14 +23,14 @@ After following the steps in the [installation guide](https://github.com/askeko/
 
 To get the bar working follow instructions: [eww](https://elkowar.github.io/eww/) 
 
-Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
-
 ### Importing dotfiles
 After running the script, simply run the following command to import all my dotfiles:
 ```
 chezmoi init --apply https://github.com/askeko/absrice.git
 ```
 You might have to rebuild bat cache for the bat theme to work: `bat cache --build`.
+
+Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
 
 ## Wayland / Hyprland
 ### Screensharing

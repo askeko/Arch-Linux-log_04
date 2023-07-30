@@ -8,6 +8,7 @@ TODO:
 
 #### Longterm improvements
 * Look through documentation of lf
+* eww bar / widgets
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).

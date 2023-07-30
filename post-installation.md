@@ -4,8 +4,7 @@
 TODO:
 * waybar / eww (eww built in ~/.local/src, symlink in ~/.local/bin)
 * colors in Hyprland
-* nvm install with aarbs.sh + node
-* install rust with rustup in aarbs.sh (remember to do it after packages are installed)
+* test if nvm, node and rustc is properly installed with the script
 
 #### Longterm improvements
 * Look through documentation of lf

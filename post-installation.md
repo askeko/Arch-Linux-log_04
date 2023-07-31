@@ -33,15 +33,12 @@ You might have to rebuild bat cache for the bat theme to work: `bat cache --buil
 Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
 
 ## Wayland / Hyprland
-### Screensharing
+### Screensharing troubleshooting
 https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
 
 https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
 
 Make sure to consult both pages.
-
-### Touch Pen
-Try opentabletdriver
  
 ## MISC
 ### Automounting drives on startup

@@ -89,11 +89,6 @@ https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring
 
 Can use runtime arguments with gnome-keyring, but maybe there is a better way.
 
-### VS Code settings import
-Get the Settings Sync extention, log in with git and import with `Shift + Alt + D`
-
-### Mopidy with Spotify
-
 ### Steam
 1. Enable multilib repo in `/etc/pacman.conf/`, remember to uncomment both lines.
 2. Run `sudo pacman -Syy`
@@ -131,7 +126,7 @@ Authentication method is normal password (might have to change in smtp server se
 * Waybar
 * Eww
 * gtk / qt
-* wofi / rofi
+* rofi
 * dunst
 * kitty
 * bat
@@ -144,7 +139,7 @@ Authentication method is normal password (might have to change in smtp server se
 This should make the keyboard activate and deactivate properly from tablet to PC mode!
 
 ### Pinch zoom
-edit `/etc/security/pam_env.conf` and add `MOZ_USE_XINPUT2 DEFAULT=1` at the bottom
+edit `/etc/security/pam_env.conf` and add `MOZ_USE_XINPUT2 DEFAULT=1` at the bottom. Is not needed for Wayland (Hyprland)
 
 ### Bluetooth
 1. Install `bluez bluez-utils`.

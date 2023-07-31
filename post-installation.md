@@ -3,7 +3,6 @@
 ## Wayland migration notes
 TODO:
 * colors in Hyprland
-* fix cursor
 
 #### Longterm improvements
 * Look through documentation of lf

@@ -47,26 +47,26 @@ installnode() {
   fi
 }
 
-installeww() {
-  echo "Installing eww..."
-  if [ ! -d "${HOME}/.local/src/eww/target/release" ]; then
-    mkdir ~/.local/src
-    cd ~/.local/src
-    git clone https://github.com/elkowar/eww
-    cd eww
-    cargo build --release --no-default-features --features=wayland
-    cd target/release
-    chmod +x ./eww
-    cd ~
-    echo "Finished installing eww"
-  else
-    echo "eww already installed"
-  fi
-}
+#installeww() {
+#  echo "Installing eww..."
+#  if [ ! -d "${HOME}/.local/src/eww/target/release" ]; then
+#    mkdir ~/.local/src
+#    cd ~/.local/src
+#    git clone https://github.com/elkowar/eww
+#    cd eww
+#    cargo build --release --no-default-features --features=wayland
+#    cd target/release
+#    chmod +x ./eww
+#    cd ~
+#    echo "Finished installing eww"
+#  else
+#    echo "eww already installed"
+#  fi
+#}
 
 installrust
 installnode
-installeww
+#installeww
 
 # Only node needs the restart - maybe fix later
 echo "Please restart the shell to start using the programs"

@@ -10,8 +10,12 @@ TODO:
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).
-1. curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh
-2. sh aarbs.sh
+1. `curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh`
+2. `sh aarbs.sh`
+
+To install some extra dependencies for the system: `curl -LO https://raw.githubusercontent.com/askeko/Arch-Linux-log_04/main/extras.sh` 
+
+This installs the following: 
 
 Install Rust: `rustup default stable`
 

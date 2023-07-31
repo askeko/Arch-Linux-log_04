@@ -84,16 +84,10 @@ You can check the symlink with `ls -l /bin/sh`
 
 ### VS Code git extension
 #### (Needs to be tested on Wayland/Hyprland)
-https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues
+https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues  
 https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring  
-In order to login with GitHub in VS Code, we have to setup the gnome-keyring properly. First make sure the following packages are installed - `gnome-keyring`, `libgnome-keyring` and optionally `seahorse`. Then add the following to `~/.config/x11/xinitrc`:
-```
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-```
-If using console-based login, add the following to `/etc/pam.d/login`: `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
 
-A restart, not just relog, might be required.
+Can use runtime arguments with gnome-keyring, but maybe there is a better way.
 
 ### VS Code settings import
 Get the Settings Sync extention, log in with git and import with `Shift + Alt + D`

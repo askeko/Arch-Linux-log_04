@@ -101,13 +101,9 @@ Can use runtime arguments with gnome-keyring, but maybe there is a better way.
 9. Regen fontconfig cache `fc-cache --force`
 
 ### Fonts
-Some symbols and fonts might need to have windows fonts installed (e.g. vscode symbolic link indicator). Do it with aur package or with installation medium.
+Some symbols and fonts might need to have windows fonts installed (e.g. vscode symbolic link indicator). Do it with installation medium.
 
-AUR packages:
-```
-ttf-ms-win10-auto
-ttf-ms-win11-auto
-```
+instructions: [Microsoft fonts](https://wiki.archlinux.org/title/Microsoft_fonts)
 
 ### Thunderbird uni mail setup
 #### Needs VPN for uni acc

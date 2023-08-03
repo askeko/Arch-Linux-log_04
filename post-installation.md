@@ -8,7 +8,6 @@
 
 #### Longterm improvements
 * Look through documentation of lf
-* eww bar / widgets
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).
@@ -22,8 +21,6 @@ This installs the following:
 Install Rust: `rustup default stable`
 
 Install NVM+Node: [nvm](https://github.com/nvm-sh/nvm)
-
-To get the bar working follow instructions (build in .local/src): [eww](https://elkowar.github.io/eww/), remember to add a symlink in PATH.
 
 ### Importing dotfiles
 After running the script, simply run the following command to import all my dotfiles:

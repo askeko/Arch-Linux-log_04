@@ -124,7 +124,7 @@ Authentication method is normal password (might have to change in smtp server se
 * gtk / qt
 * rofi
 * dunst
-* kitty
+* wezterm
 * bat
 * nvim
 

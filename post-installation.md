@@ -1,8 +1,6 @@
 # Post installation
 
 ## Wayland migration notes
-TODO:
-* colors in Hyprland
 
 #### Longterm improvements
 * Look through documentation of lf

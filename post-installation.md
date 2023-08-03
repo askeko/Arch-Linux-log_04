@@ -2,6 +2,10 @@
 
 ## Wayland migration notes
 
+#### TODO
+* Fix icons
+* Fix screenshot script
+
 #### Longterm improvements
 * Look through documentation of lf
 * eww bar / widgets
@@ -19,7 +23,7 @@ Install Rust: `rustup default stable`
 
 Install NVM+Node: [nvm](https://github.com/nvm-sh/nvm)
 
-To get the bar working follow instructions (build in .local/src): [eww](https://elkowar.github.io/eww/) 
+To get the bar working follow instructions (build in .local/src): [eww](https://elkowar.github.io/eww/), remember to add a symlink in PATH.
 
 ### Importing dotfiles
 After running the script, simply run the following command to import all my dotfiles:

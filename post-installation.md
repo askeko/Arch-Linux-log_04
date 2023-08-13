@@ -23,6 +23,83 @@ chezmoi init --apply https://github.com/askeko/absrice-dwm.git
 ```
 You might have to rebuild bat cache for the bat theme to work: `bat cache --build`.
 
+## Xorg
+### If startx
+The keyboard layout will by default be set to US (you can check options with `setxkbmap -print -verbose 10`), to change this use the following command: `setxkbmap -model pc105 -layout dk`.
+To make it persistent create or modify the file `/etc/X11/xorg.conf.d/00-keyboard.conf` and input:
+```
+Section "InputClass"
+     Identifier "system-keyboard"
+     MatchIsKeyboard "on"
+     Option "XkbLayout" "dk"
+     Option "XkbModel" "pc105"
+EndSection
+```
+
+### Mouse Acceleration
+To disable mouse acceleration create/modify the file `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf`:
+```
+Section "InputClass"
+	Identifier "My Mouse"
+	MatchIsPointer "yes"
+# set the following to 1 1 0 respectively to disable acceleration.
+	Option "AccelerationNumerator" "1"
+	Option "AccelerationDenominator" "1"
+	Option "AccelerationThreshold" "0"
+EndSection
+```
+
+### Rofi as dmenu replacement
+`sudo ln -s /usr/bin/rofi /usr/bin/dmenu`
+
+### Nvidia drivers
+1. Packages: `pacman -S nvidia nvidia-settings`
+2. Remove `kms` from the `HOOKS` array in `/etc/mkinitcpio.conf` and regenerate the initramfs with `sudo mkinitcpio -P`. This will prevent the initramfs from containing the nouveau module making sure the kernel cannot load it during early boot. 
+3. Sudo into nvidia-settings and check both `Force Composition Pipeline` and `Force Full Composition Pipeline` if you experience screen tearing. Save to X configuration file. You may have to manually create the file `touch /etc/X11/xorg.conf` first.
+
+### Cursor theme fix for Polybar
+1. Copy the theme folder (in my case "volantes_cursors") from ~/.local/share/icons/ to /usr/share/icons/. 
+2. Edit the file /usr/share/icons/default/index.theme with the name of your theme as shown below:
+```
+[Icon Theme]
+Inherits=volantes_cursors
+```
+
+#### Nvidia mouse/UI fix
+The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird way. It only seems to occur when one monitor is landscape and the other is portrait. I've done a few things to fix this:
+1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`.
+2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`.
+3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`. >>>>>> This seems to work? <<<<<<<
+4. Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xprofile` is enough?
+
+### Integrated AMD gpu + screen tearing fix
+1. `pacman -S xf86-video-amdgpu
+2. create `/etc/X11/xorg.conf.d/20-amd-gpu.conf` and input:
+```
+Section "Device
+	Identifier "AMD Graphics"
+	Driver     "amdgpu"
+	Option     "TearFree" "true"
+EndSection
+```
+
+### Screen brightness
+1. Install acpilight: `pacman -S acpilight`.
+2. Install xbindkeys: `pacman -S xbindkeys`.
+3. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`.
+4. Add user to the video group: `sudo gpasswd -a <username> video` (not sure if this is actually necessary).
+5. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`.
+
+## Wayland / Hyprland
+Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
+
+### Screensharing troubleshooting
+https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
+
+https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
+
+Make sure to consult both pages.
+
 ## MISC
 ### Automounting drives on startup
 If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
@@ -132,81 +209,3 @@ edit `/etc/security/pam_env.conf` and add `MOZ_USE_XINPUT2 DEFAULT=1` at the bot
 9. Enter `trust MAC_address`.
 10. Enter `connect MAC_address`.
 You might have to delete the device and re-pair/trust and connect for it to be reckognized as a sound device.
-
-
-## Xorg
-### If startx
-The keyboard layout will by default be set to US (you can check options with `setxkbmap -print -verbose 10`), to change this use the following command: `setxkbmap -model pc105 -layout dk`.
-To make it persistent create or modify the file `/etc/X11/xorg.conf.d/00-keyboard.conf` and input:
-```
-Section "InputClass"
-     Identifier "system-keyboard"
-     MatchIsKeyboard "on"
-     Option "XkbLayout" "dk"
-     Option "XkbModel" "pc105"
-EndSection
-```
-
-### Mouse Acceleration
-To disable mouse acceleration create/modify the file `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf`:
-```
-Section "InputClass"
-	Identifier "My Mouse"
-	MatchIsPointer "yes"
-# set the following to 1 1 0 respectively to disable acceleration.
-	Option "AccelerationNumerator" "1"
-	Option "AccelerationDenominator" "1"
-	Option "AccelerationThreshold" "0"
-EndSection
-```
-
-### Rofi as dmenu replacement
-`sudo ln -s /usr/bin/rofi /usr/bin/dmenu`
-
-### Nvidia drivers
-1. Packages: `pacman -S nvidia nvidia-settings`
-2. Remove `kms` from the `HOOKS` array in `/etc/mkinitcpio.conf` and regenerate the initramfs with `sudo mkinitcpio -P`. This will prevent the initramfs from containing the nouveau module making sure the kernel cannot load it during early boot. 
-3. Sudo into nvidia-settings and check both `Force Composition Pipeline` and `Force Full Composition Pipeline` if you experience screen tearing. Save to X configuration file. You may have to manually create the file `touch /etc/X11/xorg.conf` first.
-
-### Cursor theme fix for Polybar
-1. Copy the theme folder (in my case "volantes_cursors") from ~/.local/share/icons/ to /usr/share/icons/. 
-2. Edit the file /usr/share/icons/default/index.theme with the name of your theme as shown below:
-```
-[Icon Theme]
-Inherits=volantes_cursors
-```
-
-#### Nvidia mouse/UI fix
-The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird way. It only seems to occur when one monitor is landscape and the other is portrait. I've done a few things to fix this:
-1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`.
-2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`.
-3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`. >>>>>> This seems to work? <<<<<<<
-4. Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xprofile` is enough?
-
-### Integrated AMD gpu + screen tearing fix
-1. `pacman -S xf86-video-amdgpu
-2. create `/etc/X11/xorg.conf.d/20-amd-gpu.conf` and input:
-```
-Section "Device
-	Identifier "AMD Graphics"
-	Driver     "amdgpu"
-	Option     "TearFree" "true"
-EndSection
-```
-
-### Screen brightness
-1. Install acpilight: `pacman -S acpilight`.
-2. Install xbindkeys: `pacman -S xbindkeys`.
-3. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`.
-4. Add user to the video group: `sudo gpasswd -a <username> video` (not sure if this is actually necessary).
-5. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`.
-
-## Wayland / Hyprland
-Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
-
-### Screensharing troubleshooting
-https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
-
-https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
-
-Make sure to consult both pages.

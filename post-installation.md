@@ -19,7 +19,7 @@ Install NVM+Node: [nvm](https://github.com/nvm-sh/nvm)
 ### Importing dotfiles
 After running the script, simply run the following command to import all my dotfiles:
 ```
-chezmoi init --apply https://github.com/askeko/absrice.git
+chezmoi init --apply https://github.com/askeko/absrice-dwm.git
 ```
 You might have to rebuild bat cache for the bat theme to work: `bat cache --build`.
 

@@ -5,6 +5,7 @@
 * gtk theme
 * qt theme?
 * cursor
+* dwm wezterm switch
 
 #### Longterm improvements
 * Look through documentation of lf

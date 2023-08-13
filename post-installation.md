@@ -2,8 +2,11 @@
 #### todo
 ##### absrice-dwm
 colors
+
 gtk theme
+
 qt theme?
+
 cursor
 
 #### Longterm improvements

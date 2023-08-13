@@ -77,10 +77,6 @@ EndSection
 
 ### Screen brightness
 1. Install acpilight: `pacman -S acpilight`.
-2. Install xbindkeys: `pacman -S xbindkeys`.
-3. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`.
-4. Add user to the video group: `sudo gpasswd -a <username> video` (not sure if this is actually necessary).
-5. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`.
 
 ## Wayland / Hyprland
 Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.

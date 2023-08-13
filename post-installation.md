@@ -1,4 +1,11 @@
 # Post installation
+#### todo
+##### absrice-dwm
+colors
+gtk theme
+qt theme?
+cursor
+
 #### Longterm improvements
 * Look through documentation of lf
 

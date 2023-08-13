@@ -5,7 +5,8 @@
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).
 1. `curl -LO https://raw.githubusercontent.com/askeko/AARBS-dwm/main/aarbs.sh`
-2. `sh aarbs.sh`
+	* OR: `curl -LO https://raw.githubusercontent.com/askeko/AARBS-wayland/main/aarbs.sh`
+3. `sh aarbs.sh`
 
 after logging in, to install some extra dependencies for the system: `curl -LO https://raw.githubusercontent.com/askeko/Arch-Linux-log_04/main/extras.sh` 
 

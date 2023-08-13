@@ -1,17 +1,10 @@
 # Post installation
-
-## Wayland migration notes
-
-#### TODO
-* Fix icons
-* Fix screenshot script
-
 #### Longterm improvements
 * Look through documentation of lf
 
 ### The install script
 After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).
-1. `curl -LO https://raw.githubusercontent.com/askeko/AARBS/main/aarbs.sh`
+1. `curl -LO https://raw.githubusercontent.com/askeko/AARBS-dwm/main/aarbs.sh`
 2. `sh aarbs.sh`
 
 after logging in, to install some extra dependencies for the system: `curl -LO https://raw.githubusercontent.com/askeko/Arch-Linux-log_04/main/extras.sh` 
@@ -29,16 +22,6 @@ chezmoi init --apply https://github.com/askeko/absrice.git
 ```
 You might have to rebuild bat cache for the bat theme to work: `bat cache --build`.
 
-Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
-
-## Wayland / Hyprland
-### Screensharing troubleshooting
-https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
-
-https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
-
-Make sure to consult both pages.
- 
 ## MISC
 ### Automounting drives on startup
 If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
@@ -216,3 +199,13 @@ EndSection
 3. Edit `sudoers`: `sudo EDITOR=[editor of choice] visudo` and add the following (change username to your users name): `username ALL=(ALL) NOPASSWD: /usr/bin/xbacklight`.
 4. Add user to the video group: `sudo gpasswd -a <username> video` (not sure if this is actually necessary).
 5. You still have to put sudo in front of the command, but password is no longer required: `sudo xbacklight -inc/dec #`.
+
+## Wayland / Hyprland
+Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
+
+### Screensharing troubleshooting
+https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
+
+https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
+
+Make sure to consult both pages.

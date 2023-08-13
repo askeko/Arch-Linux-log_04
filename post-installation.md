@@ -26,15 +26,7 @@ You might have to rebuild bat cache for the bat theme to work: `bat cache --buil
 ## Xorg
 ### If startx
 The keyboard layout will by default be set to US (you can check options with `setxkbmap -print -verbose 10`), to change this use the following command: `setxkbmap -model pc105 -layout dk`.
-To make it persistent create or modify the file `/etc/X11/xorg.conf.d/00-keyboard.conf` and input:
-```
-Section "InputClass"
-     Identifier "system-keyboard"
-     MatchIsKeyboard "on"
-     Option "XkbLayout" "dk"
-     Option "XkbModel" "pc105"
-EndSection
-```
+To make it persistent add to xprofile.
 
 ### Mouse Acceleration
 To disable mouse acceleration create/modify the file `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf`:
@@ -50,7 +42,7 @@ EndSection
 ```
 
 ### Rofi as dmenu replacement
-`sudo ln -s /usr/bin/rofi /usr/bin/dmenu`
+`sudo ln -s /usr/bin/rofi /usr/bin/dmenu` (done in AARBS script)
 
 ### Nvidia drivers
 1. Packages: `pacman -S nvidia nvidia-settings`
@@ -178,9 +170,8 @@ Authentication method is normal password (might have to change in smtp server se
 
 ## Colors
 ### List of places colors are modified
-* Hyprland / DWM
-* Waybar
-* Eww
+* dwm
+* dwmblocks
 * gtk / qt
 * rofi
 * dunst
@@ -189,7 +180,6 @@ Authentication method is normal password (might have to change in smtp server se
 * nvim
 
 ## Laptop specific
-#### Unsure if pinch zoom is an issue in Hyprland
 ### Accelerometer support
 `pacman -S iio-sensor-proxy`
 This should make the keyboard activate and deactivate properly from tablet to PC mode!

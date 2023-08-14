@@ -2,7 +2,6 @@
 #### todo
 ##### absrice-dwm
 * colors
-* qt theme?
 
 #### Longterm improvements
 * Look through documentation of lf

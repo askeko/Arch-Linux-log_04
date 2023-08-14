@@ -3,7 +3,6 @@
 ##### absrice-dwm
 * colors
 * qt theme?
-* cursor
 
 #### Longterm improvements
 * Look through documentation of lf

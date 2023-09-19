@@ -28,9 +28,15 @@ loadkeys dvorak-no
 ```
 Alternatively `loadkeys dk` or `loadkeys en`.
 
-Verify UEFI mode enabled:
+Set font with:
 ```
-ls /sys/firmware/efi/efivars
+setfont [font]
+```
+Fonts are located at `/usr/share/kbd/consolefonts/`. I like `ter-v22n`.
+
+Verify UEFI mode enabled, it should return 64:
+```
+ls /sys/firmware/efi/fw_platform_size
 ```
 Verify network is listed and connected (wired):
 ```

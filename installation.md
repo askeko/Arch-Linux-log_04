@@ -128,7 +128,7 @@ pacman -S intel-ucode     # For Intel processors only
 
 ### Bootloader
 1. Install required packages: `pacman -S grub os-prober efibootmgr ntfs-3g`.
-2. Install grub: `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+2. Install grub: `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB`
 ###### NOTE
 > OS-prober and GRUB might need additional configuration here. In a new update os-prober seems to be disabled by default by GRUB. Also when working with multiple kernels, it might be easier to disable the submenu. This can be fixed by appending the following lines to `/etc/default/grub`:
 > 

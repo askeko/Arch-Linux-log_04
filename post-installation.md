@@ -135,6 +135,12 @@ Depends = dash
 ```
 You can check the symlink with `ls -l /bin/sh`
 
+### BSPWM
+To allow switching properly between dvorak/qwerty in bspwm using sxhkd, use the following command to start the daemon
+```
+sxhkd -m -1
+```
+
 ### VS Code git extension
 #### (Needs to be tested on Wayland/Hyprland)
 https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues  

@@ -3,7 +3,6 @@
 ##### absrice-dwm
 * Remember to add bspwm and remove dwm
 * Remember to add sxhkd if using bspwm
-* Papirus icons
 
 #### Longterm improvements
 * Look through documentation of lf

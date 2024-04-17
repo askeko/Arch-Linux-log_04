@@ -3,6 +3,7 @@
 ##### absrice-dwm
 * Remember to add bspwm and remove dwm
 * Remember to add sxhkd if using bspwm
+* Remember to change starship to p10k, remove starship from script(?)
 
 #### Longterm improvements
 * Look through documentation of lf

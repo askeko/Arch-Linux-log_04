@@ -1,25 +1,90 @@
 # Post installation
 
-## todo
+<!--toc:start-->
+- [Post installation](#post-installation)
+  - [ToDo](#todo)
+    - [absrice-dwm](#absrice-dwm)
+    - [absrice-wayland](#absrice-wayland)
+    - [Longterm Improvements](#longterm-improvements)
+  - [Install Script](#install-script)
+    - [Extras](#extras)
+    - [Importing Dotfiles](#importing-dotfiles)
+  - [Xorg](#xorg)
+    - [BSPWM](#bspwm)
+    - [Mouse Acceleration](#mouse-acceleration)
+    - [Nvidia Drivers](#nvidia-drivers)
+    - [Cursor Theme Fix For Polybar](#cursor-theme-fix-for-polybar)
+      - [Nvidia Mouse and UI Scaling Fix](#nvidia-mouse-and-ui-scaling-fix)
+    - [Integrated AMD GPU and Screen Tearing Fix](#integrated-amd-gpu-and-screen-tearing-fix)
+    - [Screen Brightness](#screen-brightness)
+  - [Wayland](#wayland)
+    - [Theming](#theming)
+    - [Screensharing Troubleshooting](#screensharing-troubleshooting)
+  - [MISC](#misc)
+    - [Automounting Drives On Startup (Deprecated)](#automounting-drives-on-startup-deprecated)
+    - [VPN (PIA)](#vpn-pia)
+    - [Dash](#dash)
+    - [VS Code Git Extension](#vs-code-git-extension)
+    - [Fonts](#fonts)
+  - [Colors](#colors)
+    - [List of Places Colors Are Modified](#list-of-places-colors-are-modified)
+      - [dwm colors](#dwm-colors)
+      - [wayland colors](#wayland-colors)
+      - [Shared colors](#shared-colors)
+  - [Laptop Specific](#laptop-specific)
+    - [Accelerometer Support](#accelerometer-support)
+    - [Pinch Zoom](#pinch-zoom)
+    - [Bluetooth (Deprecated)](#bluetooth-deprecated)
+<!--toc:end-->
+
+[Installation Guide]: https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md
+[Hyprland Desktop Portal]: https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
+[Hyprland Screen-Sharing]: https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
+[VS Code Keychain]: https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues
+[Gnome Keyring]: https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring
+[Microsoft Fonts]: https://wiki.archlinux.org/title/Microsoft_fonts
+
+## ToDo
 
 ### absrice-dwm
 
-- Remember to change starship to p10k, remove starship from script(?) (remember dotfiles in zsh config folder)
+- Remember to change starship to p10k, remove starship from script(?)
+  (remember dotfiles in zsh config folder)
 
-### Longterm improvements
+### absrice-wayland
+
+### Longterm Improvements
 
 - Look through documentation of lf
-- Look through starship documentation
 
-### The install script
+## Install Script
 
-After following the steps in the [installation guide](https://github.com/askeko/Arch-Linux-log_04/blob/main/installation.md).
+After following the steps in the [installation guide][Installation Guide]:
 
-1. `curl -LO https://raw.githubusercontent.com/askeko/AARBS-dwm/main/aarbs.sh`
-   - OR: `curl -LO https://raw.githubusercontent.com/askeko/AARBS-wayland/main/aarbs.sh`
-2. `sh aarbs.sh`
+```sh
+# dwm
+curl -LO https://raw.githubusercontent.com/askeko/AARBS-dwm/main/aarbs.sh
+```
 
-after logging in, to install some extra dependencies for the system: `curl -LO https://raw.githubusercontent.com/askeko/Arch-Linux-log_04/main/extras.sh`
+```sh
+# wayland
+curl -LO https://raw.githubusercontent.com/askeko/AARBS-wayland/main/aarbs.sh
+```
+
+Run script:
+
+```sh
+sh aarbs.sh
+```
+
+### Extras
+
+after logging in, to install some extra dependencies for the system:
+
+```sh
+curl -LO https://raw.githubusercontent.com/askeko/Arch-Linux-log_04/main/extras.sh
+sh extras.sh
+```
 
 This installs the following:
 
@@ -27,132 +92,171 @@ Install Rust: `rustup default stable`
 
 Install NVM+Node: [nvm](https://github.com/nvm-sh/nvm)
 
-### Importing dotfiles
+### Importing Dotfiles
 
 After running the script, simply run the following command to import all my dotfiles:
 
-```
+```sh
+# dwm
 chezmoi init --apply https://github.com/askeko/absrice-dwm.git
 ```
 
-You might have to rebuild bat cache for the bat theme to work: `bat cache --build`.
+```sh
+# wayland
+chezmoi init --apply https://github.com/askeko/absrice-wayland.git
+```
+
+You might have to rebuild bat cache for the bat theme to work:
+
+```sh
+bat cache --build
+```
 
 ## Xorg
 
-### If startx
+### BSPWM
 
-The keyboard layout will by default be set to US (you can check options with `setxkbmap -print -verbose 10`), to change this use the following command: `setxkbmap -model pc105 -layout dk`.
-To make it persistent add to xprofile.
+To allow switching properly between dvorak/qwerty in bspwm using sxhkd, use the
+following command to start the daemon
+
+```sh
+sxhkd -m -1
+```
 
 ### Mouse Acceleration
 
-To disable mouse acceleration create/modify the file `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf`:
+To disable mouse acceleration create the following file:
 
-```
+```sh
+/etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+-----------------------------------------------
 Section "InputClass"
-	Identifier "My Mouse"
-	MatchIsPointer "yes"
+    Identifier "My Mouse"
+    MatchIsPointer "yes"
 # set the following to 1 1 0 respectively to disable acceleration.
-	Option "AccelerationNumerator" "1"
-	Option "AccelerationDenominator" "1"
-	Option "AccelerationThreshold" "0"
+    Option "AccelerationNumerator" "1"
+    Option "AccelerationDenominator" "1"
+    Option "AccelerationThreshold" "0"
 EndSection
 ```
 
-### Rofi as dmenu replacement
+### Nvidia Drivers
 
-`sudo ln -s /usr/bin/rofi /usr/bin/dmenu` (done in AARBS script)
-
-### Nvidia drivers
-
-1. Packages: `pacman -S nvidia nvidia-settings`
-2. Remove `kms` from the `HOOKS` array in `/etc/mkinitcpio.conf` and regenerate the initramfs with `sudo mkinitcpio -P`. This will prevent the initramfs from containing the nouveau module making sure the kernel cannot load it during early boot.
-3. Sudo into nvidia-settings and check both `Force Composition Pipeline` and `Force Full Composition Pipeline` if you experience screen tearing. Save to X configuration file. You may have to manually create the file `touch /etc/X11/xorg.conf` first.
-
-### Cursor theme fix for Polybar
-
-1. Copy the theme folder (in my case "volantes_cursors") from ~/.local/share/icons/ to /usr/share/icons/.
-2. Edit the file /usr/share/icons/default/index.theme with the name of your theme as shown below:
-
+```sh
+pacman -S nvidia nvidia-settings
 ```
+
+Remove `kms` from the `HOOKS` array in `/etc/mkinitcpio.conf` and regenerate the
+initramfs with `sudo mkinitcpio -P`. This will prevent the initramfs from
+containing the nouveau module making sure the kernel cannot load it during
+early boot.
+
+Sudo into nvidia-settings and check both `Force Composition Pipeline` and
+`Force Full Composition Pipeline` if you experience screen tearing. Save to X
+configuration file. You may have to manually create the file
+`touch /etc/X11/xorg.conf` first.
+
+### Cursor Theme Fix For Polybar
+
+Copy the theme folder (in my case `volantes_cursors`) from
+`~/.local/share/icons/` to `/usr/share/icons/`.
+
+Edit the file `/usr/share/icons/default/index.theme` with the name of your
+theme as shown below:
+
+```sh
 [Icon Theme]
 Inherits=volantes_cursors
 ```
 
-#### Nvidia mouse/UI fix
+#### Nvidia Mouse and UI Scaling Fix
 
-The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird way. It only seems to occur when one monitor is landscape and the other is portrait. I've done a few things to fix this:
+The proprietary nvidia drivers seem to mess up mouse and UI scaling in a weird
+way. It only seems to occur when one monitor is landscape and the other is
+portrait. I've done a few things to fix this:
 
-1. In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device` section: `Option              "DPI" "96 x 96"`.
-2. Uncomment the `xrdb` command in `~/.config/x11/xprofile`.
-3. Add `Xcursor.size: 16` to `~/.config/x11/xresources`. >>>>>> This seems to work? <<<<<<<
-4. Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xprofile` is enough?
+In `/etc/X11/xorg.conf` enter the following under the `Screen` or `Device`
+section: `Option              "DPI" "96 x 96"`.
 
-### Integrated AMD gpu + screen tearing fix
+Uncomment the `xrdb` command in `~/.config/x11/xprofile`.
+Add `Xcursor.size: 16` to `~/.config/x11/xresources`.
+**This seems to work?**
 
-1. `pacman -S xf86-video-amdgpu`
-2. create `/etc/X11/xorg.conf.d/20-amd-gpu.conf` and input:
+Maybe adding `xrandr --dpi 96` to the beginning of `~/.config/x11/xprofile`
+is enough?
 
+### Integrated AMD GPU and Screen Tearing Fix
+
+```sh
+pacman -S xf86-video-amdgpu
 ```
+
+```sh
+/etc/X11/xorg.conf.d/20-amd-gpu.conf
+------------------------------------
 Section "Device
-	Identifier "AMD Graphics"
-	Driver     "amdgpu"
-	Option     "TearFree" "true"
+    Identifier "AMD Graphics"
+    Driver     "amdgpu"
+    Option     "TearFree" "true"
 EndSection
 ```
 
-### Screen brightness
+### Screen Brightness
 
-1. Install acpilight: `pacman -S acpilight`.
+```sh
+pacman -S acpilight
+```
 
-## Wayland / Hyprland
+## Wayland
 
-Might have to apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
+### Theming
 
-### Screensharing troubleshooting
+Apply GTK/QT themes with qt5ct, qt6ct, and nwg-look.
 
-https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
+### Screensharing Troubleshooting
 
-https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
+[Hyprland desktop portal][Hyprland Desktop Portal]
+
+[Hyprland screen-sharing][Hyprland Screen-Sharing]
 
 Make sure to consult both pages.
 
 ## MISC
 
-### Automounting drives on startup
+### Automounting Drives On Startup (Deprecated)
 
-If drive is mounted as read only on a dual-boot machine, it might be because of 'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
+If drive is mounted as read only on a dual-boot machine, it might be because of
+'Fast Boot' enabled in bios, causing Windows to keep the drive busy.
 
 My `/etc/fstab` entry (Drive ID can be located with `lsblk -f`:
 
-```
+```sh
 # /dev/sdc2
-UUID=<DRIVE ID>   /mnt/storage    ntfs-3g     defaults,umask=000,dmask=027,fmask=137,uid=1000,gid=998 0 0
+UUID=<DRIVE ID> /mnt/storage ntfs-3g defaults,umask=000,dmask=027,fmask=137,uid=1000,gid=998 0 0
 ```
 
 ### VPN (PIA)
 
-1. Install from AUR: `yay -S piavpn-bin`
-2. Start daemon `sudo systemctl start piavpn.service`
-3. Enable on startup `sudo systemctl enable piavpn.service`
-
-### Discord
-
-1. `yay -S discord_arch_electron`
-   - OR `pacman -S discord` for non-electron.
-2. `yay -S betterdiscordctl-git` and install with `betterdiscordctl-git install` and apply theme in Discord.
-
-### Managing dotfiles
-
-https://www.chezmoi.io/
+```sh
+yay -S piavpn-bin
+sudo systemctl start piavpn.service
+sudo systemctl enable piavpn.service
+```
 
 ### Dash
 
-1. install dash `p -S dash`
-2. symlink `ln -sfT dash /usr/bin/sh`
-3. Create a pacman hook at /etc/pacman.d/hooks/dash.hook containing the following:
+Install dash and symlink:
 
+```sh
+pacman -S dash
+ln -sfT dash /usr/bin/sh # symlink dash to sh
 ```
+
+Create the following file to prevent pacman from messing up the symlink:
+
+```sh
+/etc/pacman.d/hooks/dash.hook
+-----------------------------
 [Trigger]
 Type = Package
 Operation = Install
@@ -168,79 +272,65 @@ Depends = dash
 
 You can check the symlink with `ls -l /bin/sh`
 
-### BSPWM
+### VS Code Git Extension
 
-To allow switching properly between dvorak/qwerty in bspwm using sxhkd, use the following command to start the daemon
+To fix settings sync, consult the following pages:
 
-```
-sxhkd -m -1
-```
-
-### VS Code git extension
-
-#### (Needs to be tested on Wayland/Hyprland)
-
-https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues  
-https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring
-
-Can use runtime arguments with gnome-keyring, but maybe there is a better way.
-
-### Steam
-
-1. Enable multilib repo in `/etc/pacman.conf/`, remember to uncomment both lines.
-2. Run `sudo pacman -Syy`
-3. Install steam `sudo pacman -S steam` with the appropriate vulkan driver.
-4. enable en_US locale `sudo nvim /etc/locale.gen`
-5. run `sudo locale-gen`
-6. Make a directory for Microsoft fonts `mkdir /usr/share/fonts/WindowsFonts`
-7. Copy the fonts from a Windows partition mounted @/mnt `sudo cp /mnt/Windows/Fonts/* /usr/share/fonts/WindowsFonts/`
-8. `sudo chmod 644 /usr/share/fonts/WindowsFonts/*`
-9. Regen fontconfig cache `fc-cache --force`
+[Keychain][VS Code Keychain]
+[Keyring][Gnome Keyring]
 
 ### Fonts
 
-Some symbols and fonts might need to have windows fonts installed (e.g. vscode symbolic link indicator). Do it with installation medium.
+Some symbols and fonts might need to have windows fonts installed
+(e.g. vscode symbolic link indicator).
 
-instructions: [Microsoft fonts](https://wiki.archlinux.org/title/Microsoft_fonts)
-
-### Thunderbird uni mail setup
-
-#### Needs VPN for uni acc
-
-- Name: NAME
-- Email: Actual email people see (not username)
-
-- Your login: username (without @)
-
-- -> Manual configuration -> follow instructions on uni site with username (without @)
-  Authentication method is normal password (might have to change in smtp server settings after logging in)
-  (VPN needed for uni mail now)
+[Instructions][Microsoft Fonts]
 
 ## Colors
 
-### List of places colors are modified
+### List of Places Colors Are Modified
+
+#### dwm colors
 
 - dwm
 - dwmblocks
-- gtk / qt
 - rofi
+
+#### wayland colors
+
+- hyprland
+- waybar
+
+#### Shared colors
+
+- gtk / qt
 - dunst
 - wezterm
+- kitty
+- vscode
 - bat
 - nvim
+- firefox
 
-## Laptop specific
+## Laptop Specific
 
-### Accelerometer support
+### Accelerometer Support
 
-`pacman -S iio-sensor-proxy`
-This should make the keyboard activate and deactivate properly from tablet to PC mode!
+```sh
+pacman -S iio-sensor-proxy
+```
 
-### Pinch zoom
+This should make the keyboard activate and deactivate properly from tablet to
+PC mode!
 
-edit `/etc/security/pam_env.conf` and add `MOZ_USE_XINPUT2 DEFAULT=1` at the bottom. Is not needed for Wayland (Hyprland)
+### Pinch Zoom
 
-### Bluetooth
+edit `/etc/security/pam_env.conf` and add `MOZ_USE_XINPUT2 DEFAULT=1` at the
+bottom. Is not needed for Wayland (Hyprland)
+
+### Bluetooth (Deprecated)
+
+**Should be changed to blueman / blueberry**
 
 1. Install `bluez bluez-utils`.
 2. `systemctl start/enable bluetooth.service`.
@@ -252,4 +342,5 @@ edit `/etc/security/pam_env.conf` and add `MOZ_USE_XINPUT2 DEFAULT=1` at the bot
 8. Enter `pair MAC_address`.
 9. Enter `trust MAC_address`.
 10. Enter `connect MAC_address`.
-    You might have to delete the device and re-pair/trust and connect for it to be reckognized as a sound device.
+    You might have to delete the device and re-pair/trust and connect for it
+    to be reckognized as a sound device.

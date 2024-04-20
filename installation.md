@@ -4,6 +4,7 @@
 [Installation Template]: https://wiki.archlinux.org/index.php/User:Erkexzcx#Basic_Arch_Linux_installation
 [Arch Wiki]: https://wiki.archlinux.org/
 [Arch Download]: https://archlinux.org/download/
+[Dual Boot]: https://wiki.archlinux.org/title/System_time#UTC_in_Microsoft_Windows
 
 <!--toc:start-->
 - [Installing the Arch Linux OS](#installing-the-arch-linux-os)
@@ -22,13 +23,15 @@
       - [Optional connect via Wi-Fi](#optional-connect-via-wi-fi)
     - [Set System Clock](#set-system-clock)
     - [Partitioning](#partitioning)
+    - [(opt) Configure Mirrors](#opt-configure-mirrors)
     - [Installing the Base System](#installing-the-base-system)
+    - [Time](#time)
     - [Localization](#localization)
     - [Internet connection](#internet-connection)
     - [Hostname](#hostname)
-    - [Microcode updates](#microcode-updates)
     - [Bootloader](#bootloader)
-          - [NOTE](#note)
+      - [On multi-booting](#on-multi-booting)
+        - [Extra multi-boot options](#extra-multi-boot-options)
     - [Password](#password)
     - [Reboot](#reboot)
 <!--toc:end-->
@@ -252,8 +255,8 @@ Run hwclock to generate `/etc/adjtime`, assumes the hardware clock is set to UTC
 hwclock --systohc
 ```
 
-   - Go to https://wiki.archlinux.org/title/System_time#UTC_in_Microsoft_Windows
-   for instructions on how to sync the time on a dual boot system.
+- Go to [dual boot with windows][Dual Boot]
+  for instructions on how to sync the time on a dual boot system.
 
 Synchronize with NTP (time) servers and set the correct datetime:
 
@@ -327,10 +330,10 @@ grub-mkconfig -o /boot/grub/grub.cfg # Make the grub config file
 #### On multi-booting
 
 > OS-prober and GRUB might need additional configuration here.
-In a new update os-prober seems to be disabled by default by GRUB.
-Also when working with multiple kernels, it might be easier to disable
-the submenu. This can be fixed by appending the following lines to
-`/etc/default/grub`:
+> In a new update os-prober seems to be disabled by default by GRUB.
+> Also when working with multiple kernels, it might be easier to disable
+> the submenu. This can be fixed by appending the following lines to
+> `/etc/default/grub`:
 >
 > `GRUB_DISABLE_SUBMENU=y` # This should be at the top of the file.
 > `GRUB_DISABLE_OS_PROBER=false` # This should be at the bottom of the file.
@@ -338,9 +341,9 @@ the submenu. This can be fixed by appending the following lines to
 > Remember to (re)generate the GRUB config.
 >
 > I had some difficulties getting os-prober to recognize Windows while doing
-these steps. To fix it I did the remaining steps of this installation guide and
-rebooted into the actual system. When running os-prober it now detects the
-Windows boot partition. Remember to run mkconfig again after running os-prober.
+> these steps. To fix it I did the remaining steps of this installation guide and
+> rebooted into the actual system. When running os-prober it now detects the
+> Windows boot partition. Remember to run mkconfig again after running os-prober.
 
 ##### Extra multi-boot options
 
@@ -364,7 +367,6 @@ Then re-generate the main configuration file:
 ```sh
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
-
 
 ### Password
 

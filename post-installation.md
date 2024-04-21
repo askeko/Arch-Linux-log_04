@@ -311,6 +311,7 @@ Some symbols and fonts might need to have windows fonts installed
 - bat
 - nvim
 - firefox
+- obsidian
 
 ## Laptop Specific
 

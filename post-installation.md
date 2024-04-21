@@ -294,7 +294,6 @@ Some symbols and fonts might need to have windows fonts installed
 
 - dwm
 - dwmblocks
-- rofi
 
 #### wayland colors
 
@@ -305,6 +304,7 @@ Some symbols and fonts might need to have windows fonts installed
 
 - gtk / qt
 - dunst
+- rofi
 - wezterm
 - kitty
 - vscode

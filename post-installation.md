@@ -65,7 +65,7 @@ After following the steps in the [installation guide][Installation Guide]:
 
 ```sh
 # dwm
-curl -LO https://raw.githubusercontent.com/askeko/AARBS-dwm/main/aarbs.sh
+curl -LO https://raw.githubusercontent.com/askeko/AARBS-xorg/main/aarbs.sh
 ```
 
 ```sh
@@ -100,7 +100,7 @@ After running the script, simply run the following command to import all my dotf
 
 ```sh
 # dwm
-chezmoi init --apply https://github.com/askeko/absrice-dwm.git
+chezmoi init --apply https://github.com/askeko/absrice-xorg.git
 ```
 
 ```sh

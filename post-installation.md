@@ -293,6 +293,7 @@ Some symbols and fonts might need to have windows fonts installed
 
 OR
 - bspwm
+- polybar
 
 #### wayland colors
 

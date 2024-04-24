@@ -202,12 +202,6 @@ Section "Device
 EndSection
 ```
 
-### Screen Brightness
-
-```sh
-pacman -S acpilight
-```
-
 ## Wayland
 
 ### Theming
@@ -315,6 +309,12 @@ Some symbols and fonts might need to have windows fonts installed
 - obsidian
 
 ## Laptop Specific
+
+### Screen Brightness
+
+```sh
+pacman -S acpilight
+```
 
 ### Accelerometer Support
 

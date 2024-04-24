@@ -49,7 +49,6 @@
 ### absrice-dwm
 
 - colorscheme to rose pine
-- switch to bspwm+sxhkd
 - remember rose pine cursor
 
 ### absrice-wayland

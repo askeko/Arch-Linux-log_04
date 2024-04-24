@@ -57,6 +57,7 @@
 
 - Look through documentation of lf (shared)
 - Picom config (X, bspwm)
+- Rofi look
 
 ## Install Script
 

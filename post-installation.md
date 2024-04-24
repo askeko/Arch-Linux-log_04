@@ -48,11 +48,16 @@
 
 ### absrice-dwm
 
+- colorscheme to rose pine
+- switch to bspwm+sxhkd
+- remember rose pine cursor
+
 ### absrice-wayland
 
 ### Longterm Improvements
 
-- Look through documentation of lf
+- Look through documentation of lf (shared)
+- Picom config (X, bspwm)
 
 ## Install Script
 

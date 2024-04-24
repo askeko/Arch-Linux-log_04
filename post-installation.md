@@ -48,9 +48,6 @@
 
 ### absrice-dwm
 
-- Remember to change starship to p10k, remove starship from script(?)
-  (remember dotfiles in zsh config folder)
-
 ### absrice-wayland
 
 ### Longterm Improvements

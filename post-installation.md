@@ -58,6 +58,7 @@
 - Look through documentation of lf (shared)
 - Picom config (X, bspwm)
 - Rofi look
+- Find a way to hide polybay (and resize windows)
 
 ## Install Script
 

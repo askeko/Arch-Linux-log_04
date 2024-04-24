@@ -60,7 +60,7 @@
 
 ## Install Script
 
-After following the steps in the [installation guide][Installation Guide]:
+After following the steps in the [installation guide][Installation Guide] and logging in as root:
 
 ```sh
 # dwm

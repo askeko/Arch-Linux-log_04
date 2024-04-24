@@ -289,6 +289,8 @@ Some symbols and fonts might need to have windows fonts installed
 
 - dwm
 - dwmblocks
+OR
+- bspwm
 
 #### wayland colors
 

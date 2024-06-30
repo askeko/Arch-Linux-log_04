@@ -330,19 +330,7 @@ PC mode!
 edit `/etc/security/pam_env.conf` and add `MOZ_USE_XINPUT2 DEFAULT=1` at the
 bottom. Is not needed for Wayland (Hyprland)
 
-### Bluetooth (Deprecated)
+### Bluetooth
 
-**Should be changed to blueman / blueberry**
-
-1. Install `bluez bluez-utils`.
+1. Install `bluez bluez-utils blueman`.
 2. `systemctl start/enable bluetooth.service`.
-3. start `bluetoothctl` interactive command. `help` for list of available commands.
-4. Enter `power on`, default off and will turn off again on reboot.
-5. Discovery mode `scan on`.
-6. Enter `devices` to get the MAC addresses of the device you want to connect to.
-7. Turn the agent on with `agent on`
-8. Enter `pair MAC_address`.
-9. Enter `trust MAC_address`.
-10. Enter `connect MAC_address`.
-    You might have to delete the device and re-pair/trust and connect for it
-    to be reckognized as a sound device.

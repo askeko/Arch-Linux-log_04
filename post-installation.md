@@ -316,12 +316,6 @@ OR
 
 ## Laptop Specific
 
-### Screen Brightness
-
-```sh
-pacman -S acpilight
-```
-
 ### Accelerometer Support
 
 ```sh

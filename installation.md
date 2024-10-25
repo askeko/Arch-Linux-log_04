@@ -217,7 +217,7 @@ systemctl restart reflector.service
 Install essential packages (replace amd for intel if necessary)
 
 ```sh
-pacstrap /mnt base base-devel linux linux-firmware amd-ucode
+pacstrap /mnt base base-devel linux linux-firmware linux-headers amd-ucode
 ```
 
 Generate fstab to remount partitions in the correct positions:

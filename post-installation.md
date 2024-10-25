@@ -227,7 +227,7 @@ Navigate to `about:support` and look up "Profile Directory" to see the name of y
 
 Edit (or create if non-existing) the following file:
 
-```sh
+```css
 ~/.mozilla/firefox/{$PROFILE}/chrome/userChrome.css
 ---------------------------------------------------
 /* hides the title bar */

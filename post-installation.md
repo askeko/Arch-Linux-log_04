@@ -220,6 +220,28 @@ Make sure to consult both pages.
 
 ## MISC
 
+### Removing Firefox' tab bar
+As I use Tree Style Tabs I don't need the top bar displaying tabs. WARNING: Using TST might cause you to have an excessive number of tabs open at once.  
+
+Navigate to `about:support` and look up "Profile Directory" to see the name of your profile folder 
+
+Edit (or create if non-existing) the following file:
+
+```sh
+~/.mozilla/firefox/{$PROFILE}/chrome/userChrome.css
+---------------------------------------------------
+/* hides the title bar */
+#titlebar {
+  visibility: collapse;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
+```
+Then navigate to `about:config` and change `toolkit.legacyUserProfileCustomizations.stylesheets` to `True`
+
+
 ### Automounting Drives On Startup (Deprecated)
 
 If drive is mounted as read only on a dual-boot machine, it might be because of
